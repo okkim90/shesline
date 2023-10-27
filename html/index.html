@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She's Line</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/common.min.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="header">
+            <h1 class="logo">She's Line</h1>
+            <nav id="nav" class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="">About</a> </li>
+                    <li class="nav_item"><a href="">Process</a></li>
+                    <li class="nav_item"><a href="">Brand</a></li>
+                    <li class="nav_item"><a href="">Product</a></li>
+                    <li class="nav_item"><a href="">Store</a></li>
+                    <li class="nav_item"><a href="">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <button type="button" class="lang_btn"><span class="lang_ico"></span> K R</button>
+                <ul class="lang_list">
+                    <li><a href="">E N G</a></li>
+                    <li><a href="">J P N</a></li>
+                </ul>
+            </div>
+        </header>
+
+        
+
+        <div class="mv_wrap">
+            
+        
+            <div class="mv">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide mv_item">
+                        <div class="mv_img" style="background-image: url('https://picsum.photos/1920/1080')"></div>
+                        <div class="mv_txt">
+                            <h2 class="txt_l">머리에서 발끝까지의 <br> 아름다움</h2>
+                            <p class="txt_s">
+                                다년간의 전문성을 바탕으로 뷰티 미용 소품을 <br> 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사입니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide mv_item">
+                        <div class="mv_img" style="background-image: url('https://picsum.photos/1920/1081')"></div>
+                        <div class="mv_txt">
+                            <h2 class="txt_l">머리에서 발끝까지의 <br> 아름다움</h2>
+                            <p class="txt_s">
+                                다년간의 전문성을 바탕으로 뷰티 미용 소품을 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사입니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide mv_item">
+                        <div class="mv_img" style="background-image: url('https://picsum.photos/1921/1080')"></div>
+                        <div class="mv_txt">
+                            <h2 class="txt_l">머리에서 발끝까지의 <br> 아름다움</h2>
+                            <p class="txt_s">
+                                다년간의 전문성을 바탕으로 뷰티 미용 소품을 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mv_utils">
+                <div class="mv_progress_wrap">
+                    <svg width="100%" height="100%" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(270deg);">
+                        <circle cx="60" cy="60" r="57" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="6px" class="" />
+                        <circle cx="60" cy="60" r="57" fill="none" stroke="#fff" stroke-width="6px" stroke-linecap="round" class="progress_circle"  />
+                    </svg>
+                    <button type="button" class="mv_btn"></button>
+                </div>
+                <div class="mv_ctrl">
+                    
+                    <div class="mv_page swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span></div>
+                    <button type="button" class="btn_ctrl mv_prev" ><span class="blind">이전</span></button>
+                    <button type="button" class="btn_ctrl mv_next" ><span class="blind">다음</span></button>
+                </div>
+            </div>
+        </div>
+       
+        <div class="main_contents">
+            <section class="sec sec1">
+                <div class="inner">
+                    <div class="marquee dir_left" data-marquee-dir="left">
+                        <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                    </div>
+                    <div class="marquee dir_right" data-marquee-dir="right">
+                        <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                    </div>
+                    <script>
+                        const marquee = () => {
+                            const marquee = document.querySelectorAll('.marquee');
+                            marquee.forEach((e)=>{
+                                let marqueeCont = e.querySelector('.marquee_txt');
+                                //console.log(marqueeCont);
+                                e.append(marqueeCont.cloneNode(true));
+                                e.append(marqueeCont.cloneNode(true));
+                                let marquee_width = parseInt(
+                                    getComputedStyle(marqueeCont).getPropertyValue('width'), 10
+                                );
+                                let marquee_gap = parseInt(
+                                    getComputedStyle(e).getPropertyValue('gap'), 10
+                                );
+                                let dir = e.dataset.marqueeDir;
+                                console.log(dir);
+                                if(dir === 'left'){
+                                    const move = -1 * ( marquee_width + marquee_gap);
+                                    gsap.fromTo(
+                                        e.children,
+                                        {x: 0},
+                                        {
+                                            x: move,
+                                            duration: 16,
+                                            ease : "none",
+                                            repeat:-1
+                                        }
+                                    )
+                                }
+                                if(dir === 'right'){
+                                    const move = 1 * ( marquee_width + marquee_gap);
+                                    gsap.fromTo(
+                                        e.children,
+                                        {x: 0},
+                                        {
+                                            x: move,
+                                            duration: 16,
+                                            ease : "none",
+                                            repeat:-1
+                                        }
+                                    )
+                                }     
+                            });  
+                        }
+                        document.addEventListener("DOMContentLoaded",marquee);
+                    </script>
+
+                    <div class="fill_txt_box"></div>
+                    
+                    <script>
+                        let fill_txt_box = document.querySelector('.fill_txt_box');
+                        let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력,/적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다./IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여/높은 수준의 제품과 품질 제공을 약속합니다.`
+                        let fil_arr = fill_txt.split("");
+                        
+                        fil_arr.forEach((e)=>{
+                            newBox = document.createElement('span');
+                            br = document.createElement('br');
+                            gap = document.createElement('span');
+                            
+                            if (e === '/'){
+                                fill_txt_box.appendChild(br);
+                            }else if(e === ' '){
+                                gap.classList.add('gap');
+                                fill_txt_box.append(gap);
+                            }else{
+                                newBox.classList.add('fill_txt_item');
+                                newBox.innerHTML = e;
+                                newBox.setAttribute('data-text',e);
+                                fill_txt_box.appendChild(newBox);
+                            }
+                        });
+                        let fill_txt_item = document.querySelectorAll('.fill_txt_box span');
+
+                        let fill_timer;
+                        let count = 0;
+                        function fill_ani(){
+                            reset_ani()
+                            /*
+                            for(let i=0;i<fill_txt_item.length;i++){
+                                
+                                fill_timer = setTimeout(()=>{
+                                    fill_txt_item[i].classList.add('on')
+                                    console.log(i)
+                                }, 80*i)
+                            
+                            }*/
+
+                            fill_timer = setInterval(()=>{
+                                
+                                if(count < fill_txt_item.length){
+                                    fill_txt_item[count].classList.add('on')
+                                    count +=1;
+                                }
+                            },50);
+                        }
+
+                        
+                        function reset_ani(){
+                            //count = 0;
+                            clearInterval(fill_timer)
+                        }
+                        
+
+                        ScrollTrigger.create({
+                            trigger: fill_txt_box,
+                            onEnter: () => fill_ani(),
+                            onLeave: () => reset_ani(),
+                            onEnterBack: ()=> fill_ani(),
+                            onLeaveBack: ()=>reset_ani
+                        })
+                
+                        
+                    </script>
+                </div>
+            </section>
+            <section class="sec sec2">
+                <div class="cover_box mb100">
+                    <div class="cover_img"></div>
+                    <div class="cover_bg"></div>
+                </div>
+                <div class="inner">
+                    <div class="sec_tit">
+                        <h2>회사 연혁 및 수상 내역</h2>
+                        <p class="desc">(주)한국쉬즈라인은 1989년 창립 이후 다양한 카테고리의 뷰티 미용 소품을 <br> 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사압니다.</p>
+                    </div>
+
+                    <div class="ha">
+                        <div class="ha_btns">
+                            <button type="button">회사연혁</button>
+                            <button type="button">수상내역</button>
+                        </div>
+                        <div class="ha_list">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ha_item">
+                                    <div class="img_box"><img src="https://picsum.photos/640/320" alt=""></div>
+                                    <div class="desc">
+                                        <strong class="year">2020년</strong>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const mv = new Swiper('.mv',{
+            loop : true,
+            speed : 600,
+            pagination: {
+                el: '.mv_page',
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: '.mv_next',
+                prevEl: '.mv_prev',
+            },
+            on: {
+                init: function(){
+                  let index = this.realIndex;
+                  document.querySelector(`.mv_item[data-swiper-slide-index='${index}']`).classList.add('on');
+                  
+                },
+                slideChange : function() {
+                  startProgressbar();
+                  let index = this.realIndex;
+                  document.querySelectorAll('.mv_item').forEach((e)=>{e.classList.remove('on')})
+                  document.querySelector(`.mv_item[data-swiper-slide-index='${index}']`).classList.add('on');
+                 
+                },
+            }
+        });
+
+        const $autoplay_delay = 6; 
+        
+        const $progress_btn = document.querySelector('.mv_btn');
+
+
+        const circle = document.querySelector('.progress_circle');
+        let RADIUS = circle.getAttribute('r');
+        let CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+        circle.style.strokeDasharray = CIRCUMFERENCE;
+
+        function progress(per){
+            let progress = per / 100;
+            let dashoffset = CIRCUMFERENCE * (1 - progress);
+            circle.style.strokeDashoffset = dashoffset;
+        }
+
+        let isPause,
+            tick,
+            percentTime;
+
+        function startProgressbar() {
+            resetProgressbar();
+            percentTime = 0;
+            progress_play();
+            tick = setInterval(interval, 10);
+        }
+
+        function interval() {
+            if(isPause === false) {
+                percentTime += 1 / ($autoplay_delay+0.1);
+                /*$bar.css({
+                    width: percentTime+"%"
+                });*/
+                progress(percentTime);
+                if(percentTime >= 100){
+                    mv.slideNext();
+                    startProgressbar();
+                }
+            }
+        }
+
+        function resetProgressbar() {
+            /*$bar.css({
+                width: 0+'%' 
+            });*/
+            progress(0);
+            clearTimeout(tick);
+        }
+
+        function progress_pause(){
+            isPause = true;
+            $progress_btn.classList.add('pause');
+        }
+        function progress_play(){
+            isPause = false;
+            $progress_btn.classList.remove('pause');
+        }
+
+        $progress_btn.addEventListener('click',function(){
+            if(isPause){
+                progress_play()
+            }else{
+                isPause = true;
+                progress_pause()
+            }
+        });
+
+        if(document.querySelector('.mv')) {
+            startProgressbar();
+        }
+
+
+
+
+        const cover_img = document.querySelector('.cover_img');
+        const cover_bg = document.querySelector('.cover_bg');
+        
+
+       
+        
+        const cover = gsap.timeline({
+            
+        })
+        
+        gsap.to(cover_img,{
+           
+            opacity: 1,
+            top:0,
+            ease: 'none',
+            scrollTrigger : {
+                trigger: '.cover_box',
+                start: "top bottom ",
+                end: "bottom bottom",
+                scrub:true,
+                //markers:true
+               
+            }
+        });
+        gsap.to(cover_bg,{
+            
+            opacity: 0,
+            top:0,
+            ease: 'none',
+            scrollTrigger : {
+                trigger: '.cover_box',
+                start: "top bottom ",
+                end: "bottom bottom",
+                scrub:true,
+                //markers:true
+               
+            }
+        });
+
+
+        
+
+        const mv_wrap = document.querySelector('.mv_wrap');
+        const header = document.querySelector('.header');
+        ScrollTrigger.create({
+            trigger: mv_wrap,
+            start:()=> "top " + header.offsetHeight,
+            end:()=> "bottom " + header.offsetHeight,
+            onEnter: () => header.classList.remove('on'),
+            onLeave: () => {header.classList.add('on')},
+            onEnterBack:() => header.classList.remove('on'),
+            onLeaveBack:() => {header.classList.add('on')},
+        });
+    </script>
+</body>
+</html>
