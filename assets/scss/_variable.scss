@@ -271,11 +271,25 @@ $inner: 1280px;
         .col_item {
             width: calc((100% / $col) - ((($col - 1)/$col)*$gapX));
         }
+    }  
+}
+
+@mixin flex_gap ($col ,$gapX:20px, $gapY:30px){
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gapY $gapX;
+    .col_item {
+        width: calc((100% / $col) - ((($col - 1)/$col)*$gapX));
     }
 }
+
+
 @for $i from 1 through 10 {
     @include list_col($i ,20px, 30px);
 } 
+
+
+
 
 
 
