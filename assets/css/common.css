@@ -4192,6 +4192,216 @@ input::-webkit-search-results-decoration {
           user-select: none;
 }
 
+/* anibox  */
+.aniBox {
+  position: relative;
+  /* type */
+  /* delay */
+}
+.aniBox.ani_fade {
+  opacity: 0;
+}
+.aniBox.ani_fade.gogo {
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.42, 0, 0.38, 1), transform 0.8s cubic-bezier(0.42, 0, 0.38, 1);
+}
+.aniBox.ani_right {
+  opacity: 0;
+  transform: translateX(120px);
+}
+@media (max-width: 767px) {
+  .aniBox.ani_right {
+    transform: translateX(40px);
+  }
+}
+.aniBox.ani_right.gogo {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s cubic-bezier(0.42, 0, 0.38, 1), transform 0.8s cubic-bezier(0.42, 0, 0.38, 1);
+}
+.aniBox.ani_left {
+  opacity: 0;
+  transform: translateX(-120px);
+}
+@media (max-width: 767px) {
+  .aniBox.ani_left {
+    transform: translateX(-40px);
+  }
+}
+.aniBox.ani_left.gogo {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s cubic-bezier(0.42, 0, 0.38, 1), transform 0.8s cubic-bezier(0.42, 0, 0.38, 1);
+}
+.aniBox.ani_top {
+  opacity: 0;
+  transform: translateY(-120px);
+}
+@media (max-width: 767px) {
+  .aniBox.ani_top {
+    transform: translateY(-40px);
+  }
+}
+.aniBox.ani_top.gogo {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.42, 0, 0.38, 1), transform 0.8s cubic-bezier(0.42, 0, 0.38, 1);
+}
+.aniBox.ani_bot {
+  opacity: 0;
+  transform: translateY(120px);
+}
+@media (max-width: 767px) {
+  .aniBox.ani_bot {
+    transform: translateY(40px);
+  }
+}
+.aniBox.ani_bot.gogo {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.42, 0, 0.38, 1), transform 0.8s cubic-bezier(0.42, 0, 0.38, 1);
+}
+.aniBox.ani_img_scale {
+  overflow: hidden;
+}
+.aniBox.ani_img_scale.reverse img {
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+}
+.aniBox.ani_img_scale img {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all 1s cubic-bezier(0.42, 0, 0.38, 1);
+}
+.aniBox.ani_img_scale.gogo img {
+  opacity: 1;
+  transform: scale(1);
+}
+.aniBox.ani_cv.bottop::after {
+  bottom: auto;
+  top: 0;
+}
+.aniBox.ani_cv.leftright::after {
+  right: auto;
+  left: 0;
+}
+.aniBox.ani_cv.leftright.gogo::after {
+  width: 0;
+  height: 101%;
+}
+.aniBox.ani_cv.rightleft::after {
+  right: 0;
+  left: auto;
+}
+.aniBox.ani_cv.rightleft.gogo::after {
+  width: 0;
+  height: 101%;
+}
+.aniBox.ani_cv::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 101%;
+  background-color: #fff;
+  transition: all 1s cubic-bezier(0.42, 0, 0.38, 1);
+  z-index: 99;
+}
+.aniBox.ani_cv.gogo::after {
+  height: 0;
+}
+.aniBox.ani_cv.delay_1::after {
+  transition-delay: 0.1s;
+}
+.aniBox.ani_cv.delay_2::after {
+  transition-delay: 0.2s;
+}
+.aniBox.ani_cv.delay_3::after {
+  transition-delay: 0.3s;
+}
+.aniBox.ani_cv.delay_4::after {
+  transition-delay: 0.4s;
+}
+.aniBox.ani_cv.delay_5::after {
+  transition-delay: 0.5s;
+}
+.aniBox.ani_cv.delay_6::after {
+  transition-delay: 0.6s;
+}
+.aniBox.ani_cv.delay_7::after {
+  transition-delay: 0.7s;
+}
+.aniBox.ani_cv.delay_8::after {
+  transition-delay: 0.8s;
+}
+.aniBox.ani_cv.delay_9::after {
+  transition-delay: 0.9s;
+}
+.aniBox.ani_cv.delay_10::after {
+  transition-delay: 1s;
+}
+.aniBox.delay_1 {
+  transition-delay: 0.1s;
+}
+.aniBox.gogo.delay_1 {
+  transition-delay: 0.1s;
+}
+.aniBox.delay_2 {
+  transition-delay: 0.2s;
+}
+.aniBox.gogo.delay_2 {
+  transition-delay: 0.2s;
+}
+.aniBox.delay_3 {
+  transition-delay: 0.3s;
+}
+.aniBox.gogo.delay_3 {
+  transition-delay: 0.3s;
+}
+.aniBox.delay_4 {
+  transition-delay: 0.4s;
+}
+.aniBox.gogo.delay_4 {
+  transition-delay: 0.4s;
+}
+.aniBox.delay_5 {
+  transition-delay: 0.5s;
+}
+.aniBox.gogo.delay_5 {
+  transition-delay: 0.5s;
+}
+.aniBox.delay_6 {
+  transition-delay: 0.6s;
+}
+.aniBox.gogo.delay_6 {
+  transition-delay: 0.6s;
+}
+.aniBox.delay_7 {
+  transition-delay: 0.7s;
+}
+.aniBox.gogo.delay_7 {
+  transition-delay: 0.7s;
+}
+.aniBox.delay_8 {
+  transition-delay: 0.8s;
+}
+.aniBox.gogo.delay_8 {
+  transition-delay: 0.8s;
+}
+.aniBox.delay_9 {
+  transition-delay: 0.9s;
+}
+.aniBox.gogo.delay_9 {
+  transition-delay: 0.9s;
+}
+.aniBox.delay_10 {
+  transition-delay: 1s;
+}
+.aniBox.gogo.delay_10 {
+  transition-delay: 1s;
+}
+
 /* layout*/
 #wrap {
   overflow: hidden;
