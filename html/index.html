@@ -196,16 +196,19 @@
                         
                         function reset_ani(){
                             //count = 0;
-                            clearInterval(fill_timer)
+                            clearInterval(fill_timer);
                         }
                         
 
                         ScrollTrigger.create({
                             trigger: fill_txt_box,
+                            start: "top bottom",
+                            end: "bottom top",
                             onEnter: () => fill_ani(),
-                            onLeave: () => reset_ani(),
                             onEnterBack: ()=> fill_ani(),
-                            onLeaveBack: ()=>reset_ani
+                            onLeave: () => reset_ani(),
+                            onLeaveBack: ()=> reset_ani(),
+                            //markers:true,
                         })
                 
                         
@@ -225,8 +228,8 @@
 
                     <div class="ha">
                         <div class="ha_btns">
-                            <button type="button" data-fillter="history" onclick="ha_fillter('history')" class="ha_btn f_btn _bg_grey on">회사연혁</button>
-                            <button type="button" data-fillter="award" onclick="ha_fillter('award')" class="ha_btn f_btn _bg_grey">수상내역</button>
+                            <button type="button" data-fillter="history" onclick="ha_fillter('history')" class="ha_btn btn_sort f_btn  on">회사연혁</button>
+                            <button type="button" data-fillter="award" onclick="ha_fillter('award')" class="ha_btn btn_sort f_btn">수상내역</button>
                         </div>
                         <div class="ha_list_wrap">
                             <div class="ha_list">
@@ -469,10 +472,133 @@
                     </div>
                 </div>
             </section>
+            <section class="sec sec6 partner">
+                <div class="inner">
+                    <div class="sec_tit">
+                        <h2>유통처 및 파트너</h2>
+                    </div>
+                    <div class="partner_sort">
+                        <button type="button" data-fillter="total" onclick="partner_fillter('total')" class="partner_sort_btn btn_sort">TOTAL</button>
+                        <button type="button" data-fillter="korea" onclick="partner_fillter('korea')" class="partner_sort_btn btn_sort">Korea</button>
+                        <button type="button" data-fillter="global" onclick="partner_fillter('global')" class="partner_sort_btn btn_sort">Global</button>
+                        <button type="button" data-fillter="online" onclick="partner_fillter('online')" class="partner_sort_btn btn_sort">Online</button>
+                        <button type="button" data-fillter="colab_oem_promo" onclick="partner_fillter('colab_oem_promo')" class="partner_sort_btn btn_sort">Collaboration & OEM & Promotion</button>
+                        <button type="button" data-fillter="colab_oem" onclick="partner_fillter('colab_oem')" class="partner_sort_btn btn_sort">Collaboration & OEM</button>
+                    </div>
+                    <ul class="partner_list">
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item korea">(korea) 로고1</li>
+                        <li class="partner_item col_item global">(global) 로고1</li>
+                        <li class="partner_item col_item global">(global) 로고1</li>
+                        <li class="partner_item col_item global">(global) 로고1</li>
+                        <li class="partner_item col_item global">(global) 로고1</li>
+                        <li class="partner_item col_item global">(global) 로고1</li>
+                        <li class="partner_item col_item global">(global) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item online">(online) 로고1</li>
+                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
+                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
+                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
+                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
+                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
+                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
+                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
+                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
+                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
+                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
+                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
+                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
+                    </ul>
+                </div>               
+            </section>
+            <section class="sec sec7 map">
+                <div class="map_info">
+                    <strong class="map_info_tit">
+                        <span>Let's</span>
+                        <span class="inset">get in touch</span> 
+                    </strong>
+                    <p class="map_info_msg">아래 연락처로 연락 주시면 빠른 시간 내로 답변 드리겠습니다.</p>
+                    <dl class="map_info_desc">
+                        <dt>주소</dt>
+                        <dd>서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</dd>
+                        <dt>연락처</dt>
+                        <dd>02-431-5500</dd>
+                        <dt>이메일</dt>
+                        <dd>info@koreashesline.co.kr</dd>
+                    </dl>
+                </div>
+                <div id="map" class="map_view"></div>
+
+            </section>
         </div>
+        <footer id="footer" class="footer">
+            <div class="inner">
+                <h2 class="footer_tit">머리에서 발끝까지의 아름다움 <br> (주)한국쉬즈라인</h2>
+                <button class="btn_top" aria-label="go to top"></button>
+                <ul class="footer_info">
+                    <li class="footer_info_item">
+                        <span class="tit">주소</span>
+                        <span class="cont">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">전화번호</span>
+                        <span class="cont">02-431-5500</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">팩스</span>
+                        <span class="cont">02-431-5510</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">이메일</span>
+                        <span class="cont">info@koreashesline.co.kr</span>
+                    </li>
+                </ul>
+                <p class="copy">&copy; 2023 쉬즈라인 모든 권리 보유.</p>
+            </div>
+        </footer>
     </div>
 
     <script>
+
+        /* go to top */
+        document.querySelector('.btn_top').addEventListener('click',()=>{
+            let body = document.getElementsByTagName('body')[0];
+            gsap.to(window, .8,{
+                scrollTo:body.offsetTop
+            });
+        });
+
+
+        /* header */
+        const mv_wrap = document.querySelector('.mv_wrap');
+        const header = document.querySelector('.header');
+        ScrollTrigger.create({
+            trigger: mv_wrap,
+            start:()=> "top " + header.offsetHeight,
+            end:()=> "bottom " + header.offsetHeight,
+            onEnter: () => header.classList.remove('on'),
+            onLeave: () => {header.classList.add('on')},
+            onEnterBack:() => header.classList.remove('on'),
+            onLeaveBack:() => {header.classList.add('on')},
+        });
+      
+        
+        
+
+        /* mv */
         const mv = new Swiper('.mv',{
             loop : true,
             speed : 600,
@@ -574,48 +700,34 @@
 
 
 
+
+
+        /* cover img */
         const cover_img = document.querySelector('.cover_img');
         const cover_bg = document.querySelector('.cover_bg');
-        
-
-       
-        
-     
         function cover(){
             let cover_img_h = cover_img.clientHeight;
-            console.log(cover_img_h);
-
+            //console.log(cover_img_h);
             gsap.registerPlugin(ScrollTrigger);
-
-            
-           
-                gsap.timeline({
-                    scrollTrigger : {
-                        trigger: '.cover_box',
-                        start: "top bottom",
-                        //end: ()=> `+=${cover_img_h}`,
-                        end: "bottom bottom",
-                        pinSpacing: false,
-                        scrub:true,
-                        pin: '.cover_img',
-                        //markers:true,
-                        invalidateOnRefresh:true
-                    }
-                }).to('.cover_img',{
-                    opacity:1,
-                    duration:3,
-                    ease:'none'
-                });
+            gsap.timeline({
+                scrollTrigger : {
+                    trigger: '.cover_box',
+                    start: "top bottom",
+                    //end: ()=> `+=${cover_img_h}`,
+                    end: "bottom bottom",
+                    pinSpacing: false,
+                    scrub:true,
+                    pin: '.cover_img',
+                    //markers:true,
+                    invalidateOnRefresh:true
+                }
+            }).to('.cover_img',{
+                opacity:1,
+                duration:3,
+                ease:'none'
+            });
         }
-        
-        ['DOMContentLoaded'].forEach(event => window.addEventListener(event, cover))
-
-
-        
-       
-
-       
-
+        ['DOMContentLoaded'].forEach(event => window.addEventListener(event, cover));
         /*
         gsap.to(cover_bg,{
             
@@ -635,28 +747,14 @@
 
         
 
-        const mv_wrap = document.querySelector('.mv_wrap');
-        const header = document.querySelector('.header');
-        ScrollTrigger.create({
-            trigger: mv_wrap,
-            start:()=> "top " + header.offsetHeight,
-            end:()=> "bottom " + header.offsetHeight,
-            onEnter: () => header.classList.remove('on'),
-            onLeave: () => {header.classList.add('on')},
-            onEnterBack:() => header.classList.remove('on'),
-            onLeaveBack:() => {header.classList.add('on')},
-        });
 
-
-
-
+        /* history & award */
         const ha_btn = document.querySelectorAll('.ha_btn');
         const ha_item = document.querySelectorAll('.ha_item');
       
         function hasClass(element, clsName) {
             return(' ' + element.className + ' ').indexOf(' ' + clsName + ' ') > -1;
         }
-
 
         const ha_list = new Swiper('.ha_list',{
             loop : false,
@@ -688,7 +786,6 @@
             ha_list.update();
             ha_list.slideTo(0);
             //ha_h_resize();
-
         }
 
         function ha_h_resize(){
@@ -708,8 +805,13 @@
             });
         }
         ['DOMContentLoaded', 'resize'].forEach(event => window.addEventListener(event, ha_h_resize))
-    
-    
+        
+        
+        
+        
+        
+        
+        /* products */
         const prod_list = new Swiper('.prod_list',{
             loop : false,
             //speed : 600,
@@ -722,6 +824,85 @@
                 draggable: true,
             },
         });
+
+        /* partner */
+        const partner_btn = document.querySelectorAll('.partner_sort_btn');
+        const partner_item = document.querySelectorAll('.partner_item');
+        partner_fillter('total');
+        function partner_fillter(fillter_name){
+            
+            partner_btn.forEach(e => {
+                e.classList.remove('on');
+                if(e.dataset.fillter == fillter_name){
+                    e.classList.add('on');
+                }
+            });
+            partner_item.forEach(e => {
+                if(fillter_name == 'total'){
+                    e.style.display = 'block';
+                }else{
+                    e.style.display='none';
+                    if(e.classList.contains(fillter_name)){
+                        e.style.display = 'block';
+                    }
+                }  
+            }); 
+        }
+    </script>
+
+    <!-- 네이 -->
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wsg9q435nj"></script>
+    <script>
+        // 37.495583, 127.135190
+        var elluce = new naver.maps.LatLng(37.495583, 127.135190)
+        var map = new naver.maps.Map('map', {
+          center: new naver.maps.LatLng(37.495583, 127.135190),
+          zoom: 17,
+          minZoom: 8, //지도의 최소 줌 레벨
+          zoomControl: true, //줌 컨트롤의 표시 여부
+          zoomControlOptions: { //줌 컨트롤의 옵션
+              position: naver.maps.Position.TOP_RIGHT
+        }});
+        var marker = new naver.maps.Marker({
+            icon: {
+              url: "../assets/img/marker.webp",
+              scaledSize: new naver.maps.Size(30, 30),
+              origin: new naver.maps.Point(0, 0),
+            },
+            position: elluce,
+            map: map
+        });
+
+        var contentString = [
+        '<div class="info_desc" >',
+        '   <h2>쉬즈라인</h2>',
+        //'   <p>서울 송파구 오금로46길 10-1 쉬즈빌딩</p>',
+        '</div>'
+        ].join('');
+
+        var infowindow = new naver.maps.InfoWindow({
+            content: contentString,
+            //maxWidth: 300,
+           
+            backgroundColor: "transparent",
+            borderWidth: 0,
+            disableAnchor: true,
+            textAlign: "center",
+            margin: "auto",
+
+            pixelOffset: new naver.maps.Point(0, -10)
+        });
+        /*
+        naver.maps.Event.addListener(marker, "click", function(e) {
+            if (infowindow.getMap()) {
+                infowindow.close();
+            } else {
+                infowindow.open(map, marker);
+            }
+        });
+        */
+
+        infowindow.open(map, marker);
     </script>
 </body>
 </html>

@@ -49,7 +49,7 @@ $fz: (
     transition: all .1s ease-in-out;
     background-color: $bg;
     border-color: $bd;
-    color: #fff;
+    //color: #fff;
     &:hover {
         background-color: darken( $bg, 8%);
         border-color: darken($bd, 8%);
@@ -60,6 +60,37 @@ $fz: (
         transform: scale(0.97);
     }
 }
+
+@mixin btn_sort($bg, $on_bg, $fc, $on_fc ){
+    transition: all .1s ease-in-out;
+    background-color: $bg;
+    border-color: $bg;
+    //color: #fff;
+    &:hover {
+        background-color: darken( $bg, 7%);
+        border-color: darken($bg, 7%);
+        box-shadow: 0 2px 3px rgba(#000, 0.2);
+    }
+    &:active {
+        box-shadow: inset 0 0 4px rgba(#000, 0.2);
+        transform: scale(0.975);
+    }
+
+    &.on {
+        background-color: $on_bg;
+        border-color: $on_bg;
+        color: $on_fc;
+        &:hover {
+            background-color: darken( $on_bg, 7%);
+            border-color: darken($on_bg, 7%);
+            box-shadow: 0 2px 3px rgba(#000, 0.2);
+        }
+        &:active {
+            box-shadow: inset 0 0 4px rgba(#000, 0.2);
+        }
+    }
+}
+
 
 @mixin btn_op($bd ,$color){
     transition: all .1s ease-in-out;
