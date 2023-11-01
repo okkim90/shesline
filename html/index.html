@@ -91,10 +91,10 @@
         <div class="main_contents ">
             <section class="sec sec1 ">
                 <div class="inner">
-                    <div class="marquee dir_left aniBox ani_left" data-marquee-dir="left">
+                    <div class="marquee dir_left aniBox ani_right" data-marquee-dir="left">
                         <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
                     </div>
-                    <div class="marquee dir_right aniBox ani_right" data-marquee-dir="right">
+                    <div class="marquee dir_right aniBox ani_left" data-marquee-dir="right">
                         <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
                     </div>
                     <script>
@@ -374,6 +374,7 @@
                         <h2>브랜드</h2>
                         <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis doloremque quia, <br> neque modi odit recusandae sapiente repellendus debitis quod voluptatum?</p>
                     </div>
+                    <!--
                     <ul class="brand_list aniBox ani_bot">
                         <li class="brand_item col_item">
                             <div class="img_box">
@@ -409,7 +410,107 @@
                             </div>
                         </li>
                     </ul>
+                    -->
+                    <ul class="brand_list aniBox ani_bot"></ul>
+                    <div class="brand_popup"></div>
                 </div>
+                
+                <script>
+                    const brand_data = [
+                        {
+                            title:'툴리프',
+                            title_e:'Toolif',
+                            img:'../assets/img/brand1.jpg',
+                            list_txt:'뷰티 산업의 최신 트렌드에 집중하면서 누구나 원하는 결과를 쉽게 얻을 수 있도록 보장합니다.',
+                            pop_slogan:'툴리프 슬로건 ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹ Toolif.',
+                            pop_cont:`
+                            툴리프는 자신을 당당하게 어쩌구저쩌구 ~~~ <br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio repudiandae similique, <br>
+                            minima tempore modi. Molestias illum harum delectus perspiciatis!
+                            `,
+                            link:'www.toolif.com'
+                        },
+                        {
+                            title:'버블톡',
+                            title_e:'TooBubble Tok',
+                            img:'../assets/img/brand2.jpg',
+                            list_txt:'버블톡은 톡톡 튀는 아이디어를 더한 데일리 라이프 리빙 소품 브랜드 입니다.',
+                            pop_slogan:'버블톡 슬로건 ~!@~!@#! #!@#!@# TooBubble Tok.',
+                            pop_cont:`
+                            버블톡은 자신을 당당하게 어쩌구저쩌구 ~~~ <br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio repudiandae similique, <br>
+                            minima tempore modi. Molestias illum harum delectus perspiciatis!
+                            `,
+                            link:'www.bubbletok.com'
+                        },
+                        {
+                            title:'올리브크라운',
+                            title_e:'OliveCrown',
+                            img:'../assets/img/brand3.jpg',
+                            list_txt:'자신을 당당하게 표현하고자 하는 분들을 위한 하이엔드 헤어 악세사리 브랜드입니다.',
+                            pop_slogan:'고대 그리스, 오직 승자에게만 허락된 OliveCrown.',
+                            pop_cont:`
+                            올리브크라운은 자신을 당당하게 어쩌구저쩌구 ~~~ <br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio repudiandae similique, <br>
+                            minima tempore modi. Molestias illum harum delectus perspiciatis!
+                            `,
+                            link:'www.olivecrown.com'
+                        }
+                    ]
+                    const brand_list = document.querySelector('.brand_list');
+                    const qweqwe = () => {
+                        let arr = [];
+                        brand_data.map((e,i)=>{
+                            arr.push(
+                                `
+                                <li class="brand_item col_item">
+                                    <div class="img_box">
+                                        <img src="${e.img}" alt="">
+                                        <button type="button" class="btn_popup" onclick="brand_popup(${i})" aria-label="Toolif popup"></button>
+                                    </div>
+                                    <div class="txt_box">
+                                        <h3 class="tit">${e.title} <span>${e.title_e}</span></h3>
+                                        <p class="desc">${e.list_txt}</p>
+                                        <a href="https://${e.link}" target="_blank" class="brand_link">${e.link}</a>
+                                    </div>
+                                </li>
+                                `
+                            );
+                            
+                        });
+                        return arr.join("")
+                    };
+                    brand_list.innerHTML =  qweqwe();
+
+
+
+                    const brand_popup_element = document.querySelector('.brand_popup');
+                    function brand_popup(i){
+                        const pop_cont = `
+                            <div class="brand_popup_inner" onclick="close_popup();">
+                                <div class="brand_popup_cont" onclick="event.stopPropagation()">
+                                    <button type="button" onclick="close_popup()" class="btn_close_popup" aria-label="close popup"></button>
+                                    <div class="img_box"><img src="${brand_data[i].img}" alt=""></div>
+                                    <div class="txt_box">
+                                        <div class="t_tit">
+                                            <h3>${brand_data[i].title}</h3>
+                                            <a href="https://${brand_data[i].link}" class="link">${brand_data[i].link}</a>
+                                        </div>
+                                        <div class="t_slogan">${brand_data[i].pop_slogan}</div>
+                                        <div class="t_desc">${brand_data[i].pop_cont}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                        brand_popup_element.innerHTML = pop_cont;
+                        brand_popup_element.classList.add('on');
+                    }
+
+                    function close_popup(){
+                        brand_popup_element.classList.remove('on');
+                    }
+                  
+                </script>
             </section>
             <section class="sec sec5 bg_blk prod">
                 <div class="inner">

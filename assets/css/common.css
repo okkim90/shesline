@@ -5049,7 +5049,7 @@ input::-webkit-search-results-decoration {
 .brand_item .btn_popup::before {
   content: "";
   position: absolute;
-  width: 14px;
+  width: 16px;
   height: 2px;
   background-color: #000;
   left: 50%;
@@ -5060,7 +5060,7 @@ input::-webkit-search-results-decoration {
   content: "";
   position: absolute;
   width: 2px;
-  height: 14px;
+  height: 16px;
   background-color: #000;
   left: 50%;
   top: 50%;
@@ -5092,6 +5092,100 @@ input::-webkit-search-results-decoration {
   text-decoration: underline;
   font-size: 18px;
   color: #000;
+}
+.brand_popup {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+.brand_popup.on {
+  visibility: visible;
+  opacity: 1;
+}
+.brand_popup .btn_close_popup {
+  width: 36px;
+  height: 36px;
+  position: sticky;
+  left: calc(100% - 55px);
+  top: 15px;
+  margin-top: -40px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand_popup .btn_close_popup:before, .brand_popup .btn_close_popup:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+  transform-origin: center;
+}
+.brand_popup .btn_close_popup:before {
+  transform: rotate(45deg);
+}
+.brand_popup .btn_close_popup:after {
+  transform: rotate(-45deg);
+}
+.brand_popup_inner {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand_popup_cont {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.brand_popup_cont .img_box img {
+  width: 100%;
+}
+.brand_popup_cont .txt_box {
+  padding: 40px;
+}
+.brand_popup_cont .txt_box .t_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.brand_popup_cont .txt_box .t_tit h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.brand_popup_cont .txt_box .t_tit .link {
+  font-size: 18px;
+  text-decoration: underline;
+}
+.brand_popup_cont .txt_box .t_slogan {
+  font-size: 20px;
+  margin-top: 1em;
+  font-weight: 500;
+}
+.brand_popup_cont .txt_box .t_desc {
+  font-size: 16px;
+  margin-top: 2em;
+  color: #666;
 }
 
 .prod_list .prod-scrollbar {
