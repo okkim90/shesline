@@ -228,8 +228,8 @@
 
                     <div class="ha aniBox ani_bot">
                         <div class="ha_btns">
-                            <button type="button" data-fillter="history" onclick="ha_fillter('history')" class="ha_btn btn_sort f_btn  on">회사연혁</button>
-                            <button type="button" data-fillter="award" onclick="ha_fillter('award')" class="ha_btn btn_sort f_btn">수상내역</button>
+                            <button type="button" data-filter="history" onclick="ha_filter('history')" class="ha_btn btn_sort f_btn  on">회사연혁</button>
+                            <button type="button" data-filter="award" onclick="ha_filter('award')" class="ha_btn btn_sort f_btn">수상내역</button>
                         </div>
                         <div class="ha_list_wrap">
                             <div class="ha_list">
@@ -578,51 +578,10 @@
                     <div class="sec_tit  aniBox ani_bot">
                         <h2>유통처 및 파트너</h2>
                     </div>
-                    <div class="partner_sort  aniBox ani_bot">
-                        <button type="button" data-fillter="total" onclick="partner_fillter('total')" class="partner_sort_btn btn_sort">TOTAL</button>
-                        <button type="button" data-fillter="korea" onclick="partner_fillter('korea')" class="partner_sort_btn btn_sort">Korea</button>
-                        <button type="button" data-fillter="global" onclick="partner_fillter('global')" class="partner_sort_btn btn_sort">Global</button>
-                        <button type="button" data-fillter="online" onclick="partner_fillter('online')" class="partner_sort_btn btn_sort">Online</button>
-                        <button type="button" data-fillter="colab_oem_promo" onclick="partner_fillter('colab_oem_promo')" class="partner_sort_btn btn_sort">Collaboration & OEM & Promotion</button>
-                        <button type="button" data-fillter="colab_oem" onclick="partner_fillter('colab_oem')" class="partner_sort_btn btn_sort">Collaboration & OEM</button>
+                    <div class="partner_cont  aniBox ani_bot">
+                        <div class="partner_sort"></div>
+                        <ul class="partner_list"></ul>
                     </div>
-                    <ul class="partner_list  aniBox ani_bot">
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item korea">(korea) 로고1</li>
-                        <li class="partner_item col_item global">(global) 로고1</li>
-                        <li class="partner_item col_item global">(global) 로고1</li>
-                        <li class="partner_item col_item global">(global) 로고1</li>
-                        <li class="partner_item col_item global">(global) 로고1</li>
-                        <li class="partner_item col_item global">(global) 로고1</li>
-                        <li class="partner_item col_item global">(global) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item online">(online) 로고1</li>
-                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
-                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
-                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
-                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
-                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
-                        <li class="partner_item col_item colab_oem_promo">(colab_oem_promo) 로고1</li>
-                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
-                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
-                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
-                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
-                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
-                        <li class="partner_item col_item colab_oem">(colab_oem) 로고1</li>
-                    </ul>
                 </div>               
             </section>
             <section class="sec sec7 map ">
@@ -904,17 +863,17 @@
             },
         });
 
-        ha_fillter('history');
-        function ha_fillter(fillter_name){
+        ha_filter('history');
+        function ha_filter(filter_name){
             ha_btn.forEach(e => {
                 e.classList.remove('on');
-                if(e.dataset.fillter == fillter_name){
+                if(e.dataset.filter == filter_name){
                     e.classList.add('on');
                 }
             });
             ha_item.forEach(e => {
                 e.style.display='none';
-                if(e.classList.contains(fillter_name)){
+                if(e.classList.contains(filter_name)){
                     e.style.display = 'block';
                 }
             });
@@ -942,11 +901,6 @@
         }
         ['DOMContentLoaded', 'resize'].forEach(event => window.addEventListener(event, ha_h_resize))
         
-        
-        
-        
-        
-        
         /* products */
         const prod_list = new Swiper('.prod_list',{
             loop : false,
@@ -962,28 +916,94 @@
         });
 
         /* partner */
-        const partner_btn = document.querySelectorAll('.partner_sort_btn');
-        const partner_item = document.querySelectorAll('.partner_item');
-        partner_fillter('total');
-        function partner_fillter(fillter_name){
-            
-            partner_btn.forEach(e => {
-                e.classList.remove('on');
-                if(e.dataset.fillter == fillter_name){
-                    e.classList.add('on');
+        const partnerCont = document.querySelector('.partner_cont');
+        const partnerSort = document.querySelector('.partner_sort');
+        const partnerList = document.querySelector('.partner_list');
+        const partnerData = [
+            {filter:"Korea", name:'korea 짱신티비', img:''},
+            {filter:"Korea", name:'korea 짱신티비', img:''},
+            {filter:"Korea", name:'korea짱신티비', img:''},
+            {filter:"Korea", name:'korea 짱신티비', img:''},
+            {filter:"Korea", name:'korea짱신티비', img:''},
+            {filter:"Korea", name:'korea 짱신티비', img:''},
+            {filter:"Korea", name:'korea 짱신티비', img:''},
+            {filter:"Korea", name:'korea 짱신티비', img:''},
+            {filter:"Global", name:'global 짱신티비', img:''},
+            {filter:"Global", name:'global 짱신티비', img:''},
+            {filter:"Global", name:'global 짱신티비', img:''},
+            {filter:"Global", name:'global 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Online", name:'online 짱신티비', img:''},
+            {filter:"Colaboration & OEM & Promotion", name:'colab_oem_promo 짱신티비', img:''},
+            {filter:"Colaboration & OEM & Promotion", name:'colab_oem_promo 짱신티비', img:''},
+            {filter:"Colaboration & OEM & Promotion", name:'colab_oem_promo 짱신티비', img:''},
+            {filter:"Colaboration & OEM", name:'colab_oem 짱신티비', img:''},
+            {filter:"Colaboration & OEM", name:'colab_oem 짱신티비', img:''},
+            {filter:" & sdf", name:'sdf 짱신티비', img:''},
+            {filter:" & sdf", name:'asdfasdf 짱신티비', img:''}
+        ];
+        const setPartnerBtn = (()=>{
+            const btn_arr = partnerData.filter((item, i) => {
+                return (
+                    partnerData.findIndex((item2, j) => {
+                        return item.filter === item2.filter;
+                    }) === i
+                );
+            });
+            let arr = [];
+            arr.push(
+                `
+                <button type="button" data-filter="Total" onclick="setPartner('Total')" class="partner_sort_btn btn_sort on">TOTAL</button>
+                `
+            )
+            btn_arr.map((e,i)=>{
+                arr.push(
+                    `
+                    <button type="button" data-filter="${e.filter}" onclick="setPartner('${e.filter}')" class="partner_sort_btn btn_sort">${e.filter}</button>
+                    `
+                )
+            });
+            partnerSort.innerHTML = arr.join('');
+        })();
+        const setPartner = (filter)=>{
+            let arr = [];
+            partnerData.map((e, i)=>{
+                if(filter == e.filter){
+                    arr.push(
+                        `
+                        <li class="partner_item col_item">
+                            <img src="${e.img}" alt="">
+                            ${e.name}
+                        </li>
+                        `
+                    )
+                }else if(filter == 'Total'){
+                    arr.push(
+                        `
+                        <li class="partner_item col_item">
+                            <img src="${e.img}" alt="">
+                            ${e.name}
+                        </li>
+                        `
+                    )
                 }
             });
-            partner_item.forEach(e => {
-                if(fillter_name == 'total'){
-                    e.style.display = 'block';
-                }else{
-                    e.style.display='none';
-                    if(e.classList.contains(fillter_name)){
-                        e.style.display = 'block';
-                    }
-                }  
-            }); 
-        }
+            partnerList.innerHTML = arr.join('');
+            document.querySelectorAll('.partner_sort_btn').forEach((e)=>{
+                e.classList.remove('on');
+                if(e.dataset.filter == filter){
+                    e.classList.add('on')
+                }
+            });
+            ScrollTrigger.refresh();
+        };
+        setPartner('Total');
     </script>
 
     <!-- 네이 -->
