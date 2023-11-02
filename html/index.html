@@ -603,6 +603,78 @@
                 <div id="map" class="map_view  aniBox ani_cv"></div>
 
             </section>
+            
+            <section class="sec sec9">
+                <div class="testBox">
+                   
+                </div>
+
+                <div class="inner">
+
+                
+                    <div class="testTxt">
+                        <h1>Title</h1>
+                    </div>
+                    <div class="testTxt">
+                        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia vero deserunt perferendis voluptatibus quas! Commodi facilis repudiandae esse libero laboriosam est ab ea tempore accusamus voluptate distinctio sequi in veniam, sed, placeat voluptatibus corporis eaque. Totam ducimus tempora autem dolor hic adipisci dolore, minus ipsum fugit at distinctio. Accusantium, perspiciatis exercitationem iure, dolor nemo doloremque distinctio, delectus hic ducimus beatae obcaecati quidem quas minima repellendus natus error suscipit iusto explicabo ut. Nam porro ad voluptas tempore laudantium debitis dignissimos beatae adipisci corrupti, accusamus incidunt dolor quae sunt blanditiis recusandae quibusdam dolore aspernatur iste officia praesentium ab quo. Laborum, neque! Voluptate.</h2>
+                    </div>
+                    <div class="testTxt">
+                        <div class="inner">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia vero deserunt perferendis voluptatibus quas! Commodi facilis repudiandae esse libero laboriosam est ab ea tempore accusamus voluptate distinctio sequi in veniam, sed, placeat voluptatibus corporis eaque. Totam ducimus tempora autem dolor hic adipisci dolore, minus ipsum fugit at distinctio. Accusantium, perspiciatis exercitationem iure, dolor nemo doloremque distinctio, delectus hic ducimus beatae obcaecati quidem quas minima repellendus natus error suscipit iusto explicabo ut. Nam porro ad voluptas tempore laudantium debitis dignissimos beatae adipisci corrupti, accusamus incidunt dolor quae sunt blanditiis recusandae quibusdam dolore aspernatur iste officia praesentium ab quo. Laborum, neque! Voluptate.</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                   
+                    gsap.timeline({
+                        scrollTrigger : {
+                            trigger: '.sec9',
+                            start: "top top",
+                            //end: ()=> `+=${cover_img_h}`,
+                            end: "bottom bottom",
+                            pinSpacing: false,
+                            anticipatePin:1,
+                            scrub:0.5,
+                            pin: '.testBox',
+                            //markers:true,
+                            invalidateOnRefresh:true
+                        }
+                    })
+                </script>
+            </section>
+            <section class="sec sec10">
+                <div class="hbox_wrapper">
+                    <div class="hbox hbox1"></div>
+                    <div class="hbox hbox2"></div>
+                    <div class="hbox hbox3"></div>
+                </div>
+                
+                
+            </section>
+            <script>
+                const hbox = document.querySelectorAll('.hbox');
+                const hbox1 = document.querySelector('.hbox1');
+                const hbox2 = document.querySelector('.hbox2');
+                const hbox3 = document.querySelector('.hbox3');
+                gsap.timeline({
+                    scrollTrigger : {
+                        trigger:'.sec10',
+                        pin: true,
+                        pinType: "fixed",
+                        anticipatePin:1,
+                        scrub:0.3,
+                        start:'top top',
+                        end:'+=12000 top',
+                        //markers:true,
+                    }
+                    
+                })
+                .to(hbox1, {xPercent:-100, duration:4, ease:'none', stagger:3}).to({},{duration:1})
+                .to(hbox2, {xPercent:100, duration:4, ease:'none', stagger:3}).to({},{duration:1})
+                .to(hbox3, {yPercent:-100, duration:4, ease:'none', stagger:3}).to({},{duration:1})
+                //.to(hbox, {xPercent:-100, duration:2, ease:'none', stagger:3}).to({},{duration:1})
+            </script>
+            <div class="sec11"></div>
         </div>
         <footer id="footer" class="footer">
             <div class="inner">
@@ -666,7 +738,9 @@
            
         }
         window.addEventListener('DOMContentLoaded', toggleActiveOnViewport);
-      
+    
+
+
 
         /* go to top */
         document.querySelector('.btn_top').addEventListener('click',()=>{
