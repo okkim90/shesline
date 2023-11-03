@@ -5227,6 +5227,10 @@ input::-webkit-search-results-decoration {
   text-align: center;
   font-size: 16px;
   line-height: 60px;
+  display: none;
+}
+.partner_item.on {
+  display: block;
 }
 
 .marker {
@@ -5330,6 +5334,7 @@ input::-webkit-search-results-decoration {
 
 .sec9 {
   padding-top: 0 !important;
+  position: relative;
 }
 
 .testBox {
@@ -5343,6 +5348,7 @@ input::-webkit-search-results-decoration {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 0;
 }
 .testBox h2 {
   font-size: 100px;

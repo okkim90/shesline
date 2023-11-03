@@ -7,13 +7,16 @@
     <title>She's Line</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/smooth-scrollbar.js"></script>
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/common.min.css">
 </head>
 <body>
-    <div id="wrap">
+    <div id="wrap" >
+
         <header id="header" class="header">
             <h1 class="logo">She's Line</h1>
             <nav id="nav" class="nav">
@@ -34,12 +37,7 @@
                 </ul>
             </div>
         </header>
-
-        
-
         <div class="mv_wrap">
-            
-        
             <div class="mv">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide mv_item">
@@ -87,7 +85,7 @@
                 </div>
             </div>
         </div>
-       
+    
         <div class="main_contents ">
             <section class="sec sec1 ">
                 <div class="inner">
@@ -509,7 +507,7 @@
                     function close_popup(){
                         brand_popup_element.classList.remove('on');
                     }
-                  
+                
                 </script>
             </section>
             <section class="sec sec5 bg_blk prod">
@@ -582,6 +580,8 @@
                         <div class="partner_sort"></div>
                         <ul class="partner_list"></ul>
                     </div>
+
+                    <button type="button" onclick="partner_add(5)">추가</button>
                 </div>               
             </section>
             <section class="sec sec7 map ">
@@ -600,13 +600,13 @@
                         <dd>info@koreashesline.co.kr</dd>
                     </dl>
                 </div>
-                <div id="map" class="map_view  aniBox ani_cv"></div>
+                <div id="map" class="map_view  aniBox ani_fade"></div>
 
             </section>
             
             <section class="sec sec9">
                 <div class="testBox">
-                   
+                
                 </div>
 
                 <div class="inner">
@@ -625,7 +625,7 @@
                     </div>
                 </div>
                 <script>
-                   
+                
                     gsap.timeline({
                         scrollTrigger : {
                             trigger: '.sec9',
@@ -633,8 +633,9 @@
                             //end: ()=> `+=${cover_img_h}`,
                             end: "bottom bottom",
                             pinSpacing: false,
+                            pinType: "fixed",
                             anticipatePin:1,
-                            scrub:0.5,
+                            scrub:3,
                             pin: '.testBox',
                             //markers:true,
                             invalidateOnRefresh:true
@@ -643,10 +644,11 @@
                 </script>
             </section>
             <section class="sec sec10">
+                <div>Sec10 01</div>
                 <div class="hbox_wrapper">
-                    <div class="hbox hbox1"></div>
-                    <div class="hbox hbox2"></div>
-                    <div class="hbox hbox3"></div>
+                    <div class="hbox hbox1"><div>Sec10 02</div></div>
+                    <div class="hbox hbox2"><div>Sec10 03</div></div>
+                    <div class="hbox hbox3"><div>Sec10 04</div></div>
                 </div>
                 
                 
@@ -704,7 +706,7 @@
     </div>
 
     <script>
-
+        
 
         const toggleActiveOnViewport = () => {
             let elements = document.querySelectorAll(".aniBox");
@@ -877,7 +879,7 @@
         function cover(){
             let cover_img_h = cover_img.clientHeight;
             //console.log(cover_img_h);
-            gsap.registerPlugin(ScrollTrigger);
+           
             gsap.timeline({
                 scrollTrigger : {
                     trigger: '.cover_box',
@@ -1045,6 +1047,16 @@
             });
             partnerSort.innerHTML = arr.join('');
         })();
+
+
+        let pcount = ()=>{
+            if (window.innerWidth < 1025) {
+                return 15;
+            }else{
+                return 25;
+            }
+        }
+    
         const setPartner = (filter)=>{
             let arr = [];
             partnerData.map((e, i)=>{
@@ -1076,8 +1088,26 @@
                 }
             });
             ScrollTrigger.refresh();
+            partner_count(pcount());
+            
         };
         setPartner('Total');
+        
+       
+        function partner_count(count){
+            let partner_item = document.querySelectorAll('.partner_item');
+            partner_item.forEach((e,i)=>{
+                i < count ? e.classList.add('on') : null
+            });
+        }
+
+        function partner_add(add_count){
+            let partner_item = document.querySelectorAll('.partner_item');
+            let partner_item_length = document.querySelectorAll('.partner_item.on').length;
+            partner_item.forEach((e,i)=>{
+                i < partner_item_length + add_count ? e.classList.add('on') : null
+            })
+        }
     </script>
 
     <!-- 네이 -->
