@@ -19,10 +19,10 @@ body {
 
     line-height: 1.5;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 16px;
     font-family: $font;
     
-    color: #222;
+    color: #353535;
     letter-spacing: -0.4px;
     overflow-x: auto;
 }
@@ -269,7 +269,7 @@ input::-webkit-search-results-decoration {
 }
 
 ::-moz-selection {
-    background: $c_key;
+    background: rgba($c_key, .1);
     color: #fff;
 }
 
