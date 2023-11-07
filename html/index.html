@@ -23,12 +23,12 @@
             <h1 class="logo">She's Line</h1>
             <nav id="nav" class="nav">
                 <ul class="nav_list">
-                    <li class="nav_item"><a href="">About</a> </li>
-                    <li class="nav_item"><a href="">Process</a></li>
-                    <li class="nav_item"><a href="">Brand</a></li>
-                    <li class="nav_item"><a href="">Product</a></li>
-                    <li class="nav_item"><a href="">Store</a></li>
-                    <li class="nav_item"><a href="">Contact</a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area1'); return false">About</a> </li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area2'); return false">Process</a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area3'); return false">Brand</a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area4'); return false">Product</a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area5'); return false">Store</a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area6'); return false">Contact</a></li>
                 </ul>
             </nav>
             <div class="lang">
@@ -92,328 +92,462 @@
         </div>
     
         <div class="main_contents ">
-            <section class="sec sec1 ">
-                <div class="inner">
-                    <div class="marquee_wrap">
-                        <div class="marquee dir_left " data-marquee-dir="left">
-                            <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+            <section class="sec_area sec_area1">
+                <section class="sec sec1 ">
+                    <div class="inner">
+                        <div class="marquee_wrap">
+                            <div class="marquee dir_left " data-marquee-dir="left">
+                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                            </div>
+                            <div class="marquee dir_right " data-marquee-dir="right">
+                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                            </div>
                         </div>
-                        <div class="marquee dir_right " data-marquee-dir="right">
-                            <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                        </div>
+                        <div class="fill_txt_box  aniBox ani_bot"></div>   
                     </div>
-                    <div class="fill_txt_box  aniBox ani_bot"></div>   
-                </div>
+                </section>
             </section>
-            <section class="sec sec2 aniBox">
-                <div class="cover_box mb100">
-                    <div class="cover_img"></div>
-                    <div class="cover_bg"></div>
-                </div>
-                <div class="inner">
-                    <div class="sec_tit aniBox ani_bot">
-                        <h2>회사 연혁 및 수상 내역</h2>
-                        <p class="desc">(주)한국쉬즈라인은 1989년 창립 이후 다양한 카테고리의 뷰티 미용 소품을 <br> 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사압니다.</p>
+            <section class="sec_area sec_area2">
+                <section class="sec sec2 aniBox">
+                    <div class="cover_box mb100">
+                        <div class="cover_img"></div>
+                        <div class="cover_bg"></div>
                     </div>
-                    <div class="ha aniBox ani_bot">
-                        <div class="ha_btns">
-                            <button type="button" data-filter="history" onclick="ha_filter('history')" class="ha_btn btn_sort f_btn  on">회사 연혁</button>
-                            <button type="button" data-filter="award" onclick="ha_filter('award')" class="ha_btn btn_sort f_btn">수상 내역</button>
+                    <div class="inner">
+                        <div class="sec_tit aniBox ani_bot">
+                            <h2>회사 연혁 및 수상 내역</h2>
+                            <p class="desc">(주)한국쉬즈라인은 1989년 창립 이후 다양한 카테고리의 뷰티 미용 소품을 <br> 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사압니다.</p>
                         </div>
-                        <div class="ha_list_wrap">
-                            <div class="ha_list">
-                                <div class="swiper-wrapper">
+                        <div class="ha aniBox ani_bot">
+                            <div class="ha_btns">
+                                <button type="button" data-filter="history" onclick="ha_filter('history')" class="ha_btn btn_sort f_btn  on">회사 연혁</button>
+                                <button type="button" data-filter="award" onclick="ha_filter('award')" class="ha_btn btn_sort f_btn">수상 내역</button>
+                            </div>
+                            <div class="ha_list_wrap">
+                                <div class="ha_list">
+                                    <div class="swiper-wrapper">
 
-                                    <!-- 연혁 -->
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history1.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2022</strong>
-                                            <p>ISO9001, ISO14001 인증 획득</p>
+                                        <!-- 연혁 -->
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history1.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2022</strong>
+                                                <p>ISO9001, ISO14001 인증 획득</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history2.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2020</strong>
-                                            <p>R&D 부서 신설</p>
-                                            <p>사단법인 한국강소기업협회 회원가입</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history2.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2020</strong>
+                                                <p>R&D 부서 신설</p>
+                                                <p>사단법인 한국강소기업협회 회원가입</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history3.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2018</strong>
-                                            <p>디자인 부설 연구소 신설</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history3.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2018</strong>
+                                                <p>디자인 부설 연구소 신설</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history4.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2004</strong>
-                                            <p>드럭스토어 (헬스&뷰티 스토어) <br> 제품 공급 시작</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history4.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2004</strong>
+                                                <p>드럭스토어 (헬스&뷰티 스토어) <br> 제품 공급 시작</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history5.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">1996</strong>
-                                            <p>할인점 제품 공급 시작</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history5.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">1996</strong>
+                                                <p>할인점 제품 공급 시작</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history6.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">1993</strong>
-                                            <p>전국 편의점 여성 뷰티 기기 및 <br> 잡화 제품 공급 시작</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history6.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">1993</strong>
+                                                <p>전국 편의점 여성 뷰티 기기 및 <br> 잡화 제품 공급 시작</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history7.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">1990</strong>
-                                            <p>백화점 사업 전개</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history7.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">1990</strong>
+                                                <p>백화점 사업 전개</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item history">
-                                        <div class="ico_box"><img src="../assets/img/ico_history8.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">1989</strong>
-                                            <p>㈜한국 쉬즈라인 설립</p>
+                                        <div class="swiper-slide ha_item history">
+                                            <div class="ico_box"><img src="../assets/img/ico_history8.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">1989</strong>
+                                                <p>㈜한국 쉬즈라인 설립</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!--// 연혁 -->
+                                        <!--// 연혁 -->
 
-                                    <!-- 수상 -->
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award1.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2023</strong>
-                                            <p>글로벌 강소기업 1,000+ 기업 선정</p>
+                                        <!-- 수상 -->
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award1.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2023</strong>
+                                                <p>글로벌 강소기업 1,000+ 기업 선정</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award2.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2022</strong>
-                                            <p>수출의날 100만불 수출탑수상</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award2.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2022</strong>
+                                                <p>수출의날 100만불 수출탑수상</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award3.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2019-22</strong>
-                                            <p>CJ 올리브영 감사패 및 미용소품 부분 1위 3년 연속 수상</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award3.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2019-22</strong>
+                                                <p>CJ 올리브영 감사패 및 미용소품 부분 1위 3년 연속 수상</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award4.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2018</strong>
-                                            <p>우수기업 표창장 수상 (송파구청)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award4.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2018</strong>
+                                                <p>우수기업 표창장 수상 (송파구청)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award5.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2017</strong>
-                                            <p>하이서울 브랜드 기업 선정 (서울시, 서울산업진흥원)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award5.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2017</strong>
+                                                <p>하이서울 브랜드 기업 선정 (서울시, 서울산업진흥원)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award6.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2016</strong>
-                                            <p>환경보존 감사장 수상 (환경부)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award6.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2016</strong>
+                                                <p>환경보존 감사장 수상 (환경부)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award7.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2015</strong>
-                                            <p>올리브영, CJ 올리브네트웍스 우수거래업체선정</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award7.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2015</strong>
+                                                <p>올리브영, CJ 올리브네트웍스 우수거래업체선정</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award8.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2010</strong>
-                                            <p>경영혁신중소기업선정 (중소기업청)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award8.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2010</strong>
+                                                <p>경영혁신중소기업선정 (중소기업청)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award9.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2009</strong>
-                                            <p>한미무역 공헌 표창장 (미국 상무부)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award9.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2009</strong>
+                                                <p>한미무역 공헌 표창장 (미국 상무부)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award10.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2006</strong>
-                                            <p>서울시장 표창장 (제166호)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award10.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2006</strong>
+                                                <p>서울시장 표창장 (제166호)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award11.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2005</strong>
-                                            <p>산업자원부장관 표창장 (모범기업인부분)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award11.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2005</strong>
+                                                <p>산업자원부장관 표창장 (모범기업인부분)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award12.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">2004</strong>
-                                            <p>고용창출 공로패 수상 (송파구청장)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award12.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">2004</strong>
+                                                <p>고용창출 공로패 수상 (송파구청장)</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide ha_item award">
-                                        <div class="ico_box"><img src="../assets/img/ico_award13.svg" alt=""></div>
-                                        <div class="desc">
-                                            <strong class="year">1995-1996</strong>
-                                            <p>LG유통 우수거래업체선정 (95, 96년 2년 연속수상)</p>
-                                            <p>대기업 유통채널협회 우수거래업체 선정 (2년 연속 수상)</p>
+                                        <div class="swiper-slide ha_item award">
+                                            <div class="ico_box"><img src="../assets/img/ico_award13.svg" alt=""></div>
+                                            <div class="desc">
+                                                <strong class="year">1995-1996</strong>
+                                                <p>LG유통 우수거래업체선정 (95, 96년 2년 연속수상)</p>
+                                                <p>대기업 유통채널협회 우수거래업체 선정 (2년 연속 수상)</p>
+                                            </div>
                                         </div>
+                                        <!--// 수상 -->
                                     </div>
-                                    <!--// 수상 -->
+                                
                                 </div>
-                            
-                            </div>
-                            <div class="ha_ctrl">
-                                <button type="button" class="ha_ctrl_btn ha_prev"></button>
-                                <button type="button" class="ha_ctrl_btn ha_next"></button>
+                                <div class="ha_ctrl">
+                                    <button type="button" class="ha_ctrl_btn ha_prev"></button>
+                                    <button type="button" class="ha_ctrl_btn ha_next"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="sec sec3 ccc bg_blk">
-                <div class="inner">
-                    <div class="sec_tit aniBox ani_bot">
-                        <h2>Company Core Competency</h2>
-                    </div>
-                    <ul class="ccc_list aniBox ani_bot">
-                        <li class="ccc_item col_item">
-                            <i class="ico_box"><img src="../assets/img/ccc_ico1.svg" alt=""></i>
-                            <strong class="tit">경험과 노하우</strong>
-                            <p class="desc">30년 이상의 경험과 노하우를 바탕으로 <br> 정확한 상품 선정 및 개발 수행</p>
-                        </li>
-                        <li class="ccc_item col_item">
-                            <i class="ico_box"><img src="../assets/img/ccc_ico2.svg" alt=""></i>
-                            <strong class="tit">차별화된 상품 개발</strong>
-                            <p class="desc">별도 연구개발 전담 부서를 보유하여 <br> 지속적 R&D를 통해 차별화된 상품 개발 진행</p>
-                        </li>
-                        <li class="ccc_item col_item">
-                            <i class="ico_box"><img src="../assets/img/ccc_ico3.svg" alt=""></i>
-                            <strong class="tit">디자인 부설 연구소</strong>
-                            <p class="desc">디자인 부설 연구소를 확보하여 <br> 전문 담당 배치를 통한 트렌디한 디자인 개발</p>
-                        </li>
-                        <li class="ccc_item col_item">
-                            <i class="ico_box"><img src="../assets/img/ccc_ico4.svg" alt="" class="h_fix"></i>
-                            <strong class="tit">품질 안정화</strong>
-                            <p class="desc">인하우스 제품 인스펙션 및 패킹을 진행하여 <br> 상품 품질 안정화 확보</p>
-                        </li>
-                        <li class="ccc_item col_item">
-                            <i class="ico_box"><img src="../assets/img/ccc_ico5.svg" alt="" class="h_fix"></i>
-                            <strong class="tit">자체 물류센터 보유</strong>
-                            <p class="desc">자체 물류 센터 (제1 남양주, 제2 곤지암) 보유를 통한 <br> 상품 공급 안정성 확보</p>
-                        </li>
-                        <li class="ccc_item col_item">
-                            <i class="ico_box"><img src="../assets/img/ccc_ico6.svg" alt=""></i>
-                            <strong class="tit">ISO 9001, ISO 14001 인증</strong>
-                            <p class="desc">ISO 9001, ISO 14001을 인증받아 <br> 시스템 안정 및 환경경영시스템 구축</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="sec sec4 brand">
-                <div class="inner">
-                    <div class="sec_tit aniBox ani_bot">
-                        <h2>브랜드</h2>
-                        <p class="desc">트렌디한 뷰티툴 전문 브랜드인 Toolif 와 톡톡 튀는 데일리 라이프 리빙 뷰티 소품 브랜드 Bubble Tok, <br> 하이엔드 헤어 액세서리 브랜드 OliveCrown 등의 브랜드를 전개하고 있습니다.</p>
-                    </div>
-                    <ul class="brand_list aniBox ani_bot"></ul>
-                    <div class="brand_popup"></div>
-                </div>
-            </section>
-            <section class="sec sec5 bg_blk prod">
-                <div class="inner">
-                    <div class="sec_tit aniBox ani_bot">
-                        <h2>Products Line-up</h2>
-                    </div>
-                    <div class="prod_list aniBox ani_bot">
-                        <div class="swiper-wrapper">  
+                </section>
+                <section class="sec sec3 ccc bg_blk">
+                    <div class="inner">
+                        <div class="sec_tit aniBox ani_bot">
+                            <h2>Company Core Competency</h2>
                         </div>
-                        <div class="prod-scrollbar"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="sec sec6 partner">
-                <div class="inner">
-                    <div class="sec_tit  aniBox ani_bot">
-                        <h2>유통처 및 파트너</h2>
-                    </div>
-                    <div class="partner_cont  aniBox ani_bot">
-                        <div class="partner_sort"></div>
-                        <ul class="partner_list"></ul>
-                    </div>
-                    <button type="button" onclick="partner_add(4)" class="partner_cont_btn">추가<i></i></button>
-                </div>               
-            </section>
-            <section class="sec sec7 map ">
-                <div class="inner">
-                    <div class="map_tit  aniBox ani_left">
-                        <h2><img src="../assets/img/tit_contactus.svg" alt="Contact us"></h2>
-                        <button type="button" class="btn_popup_contact" aria-label="open contact popup"></button>
-                    </div>
-                    <div class="map_wrap">
-                        <ul class="map_info ">
-                            <li class="map_info_item">
-                                <div class="map_info_tit"></div>
-
+                        <ul class="ccc_list aniBox ani_bot">
+                            <li class="ccc_item col_item">
+                                <i class="ico_box"><img src="../assets/img/ccc_ico1.svg" alt=""></i>
+                                <strong class="tit">경험과 노하우</strong>
+                                <p class="desc">30년 이상의 경험과 노하우를 바탕으로 <br> 정확한 상품 선정 및 개발 수행</p>
                             </li>
-                            
+                            <li class="ccc_item col_item">
+                                <i class="ico_box"><img src="../assets/img/ccc_ico2.svg" alt=""></i>
+                                <strong class="tit">차별화된 상품 개발</strong>
+                                <p class="desc">별도 연구개발 전담 부서를 보유하여 <br> 지속적 R&D를 통해 차별화된 상품 개발 진행</p>
+                            </li>
+                            <li class="ccc_item col_item">
+                                <i class="ico_box"><img src="../assets/img/ccc_ico3.svg" alt=""></i>
+                                <strong class="tit">디자인 부설 연구소</strong>
+                                <p class="desc">디자인 부설 연구소를 확보하여 <br> 전문 담당 배치를 통한 트렌디한 디자인 개발</p>
+                            </li>
+                            <li class="ccc_item col_item">
+                                <i class="ico_box"><img src="../assets/img/ccc_ico4.svg" alt="" class="h_fix"></i>
+                                <strong class="tit">품질 안정화</strong>
+                                <p class="desc">인하우스 제품 인스펙션 및 패킹을 진행하여 <br> 상품 품질 안정화 확보</p>
+                            </li>
+                            <li class="ccc_item col_item">
+                                <i class="ico_box"><img src="../assets/img/ccc_ico5.svg" alt="" class="h_fix"></i>
+                                <strong class="tit">자체 물류센터 보유</strong>
+                                <p class="desc">자체 물류 센터 (제1 남양주, 제2 곤지암) 보유를 통한 <br> 상품 공급 안정성 확보</p>
+                            </li>
+                            <li class="ccc_item col_item">
+                                <i class="ico_box"><img src="../assets/img/ccc_ico6.svg" alt=""></i>
+                                <strong class="tit">ISO 9001, ISO 14001 인증</strong>
+                                <p class="desc">ISO 9001, ISO 14001을 인증받아 <br> 시스템 안정 및 환경경영시스템 구축</p>
+                            </li>
                         </ul>
-                        <div id="map" class="map_view  aniBox ani_fade"></div>
-                    </div> 
-                </div>
-
-
-                <div class="popup_contact">
-                    <div class="popup_contact_inner">
-                        <div class="popup_contact_cont">
-                            <h2 class="tit">고객문의</h2>
-                            <p class="desc">궁금하신 문의사항을 보내주시면 최대한 신속하게 답변 해드리겠습니다. <br> 답변을 위해 이메일을 정확하게 입력하여 주십시오.</p>
-                            <form action="" class="contact_form" onsubmit="return validateForm()">
-                                <div class="contact_input_wrap">
-                                    <div class="input_item">
-                                        <input type="text" class="f_input required" id="name" placeholder="성명*" >
-                                    </div>
-                                    <div class="input_item w50">
-                                        <input type="email" class="f_input required"  id="email" placeholder="이메일*" >
-                                    </div>
-                                    <div class="input_item w50">
-                                        <input type="tel" class="f_input required"  id="tel" placeholder="전화번호*" >
-                                    </div>
-                                    <div class="input_item">
-                                        <input type="text" class="f_input required" id="title" placeholder="문의 제목*" >
-                                    </div>
-                                    <div class="input_item">
-                                        <textarea name="" id="text" class="f_ta required"   placeholder="문의 내용*" ></textarea>
-                                    </div>
-                                </div>
-                                <input type="submit" value="문의하기" class="f_btn _fc">
-                            </form>
-                            <script>
-                                
-                                
-                            </script>
+                    </div>
+                </section>
+            </section>
+            <section class="sec_area sec_area3">
+                <section class="sec sec4 brand">
+                    <div class="inner">
+                        <div class="sec_tit aniBox ani_bot">
+                            <h2>브랜드</h2>
+                            <p class="desc">트렌디한 뷰티툴 전문 브랜드인 Toolif 와 톡톡 튀는 데일리 라이프 리빙 뷰티 소품 브랜드 Bubble Tok, <br> 하이엔드 헤어 액세서리 브랜드 OliveCrown 등의 브랜드를 전개하고 있습니다.</p>
+                        </div>
+                        <ul class="brand_list aniBox ani_bot"></ul>
+                        <div class="brand_popup"></div>
+                    </div>
+                </section>
+            </section>
+            <section class="sec_area sec_area4">
+                <section class="sec sec5 bg_blk prod">
+                    <div class="inner">
+                        <div class="sec_tit aniBox ani_bot">
+                            <h2>Products Line-up</h2>
+                        </div>
+                        <div class="prod_list aniBox ani_bot">
+                            <div class="swiper-wrapper">  
+                            </div>
+                            <div class="prod-scrollbar"></div>
                         </div>
                     </div>
-                    
-                </div>
+                </section>
+            </section>
+            <section class="sec_area sec_area5">
+                <section class="sec sec6 partner">
+                    <div class="inner">
+                        <div class="sec_tit  aniBox ani_bot">
+                            <h2>유통처 및 파트너</h2>
+                        </div>
+                        <div class="partner_cont  aniBox ani_bot">
+                            <div class="partner_sort"></div>
+                            <ul class="partner_list"></ul>
+                        </div>
+                        <button type="button" onclick="partner_add(4)" class="partner_cont_btn">추가<i></i></button>
+                    </div>               
+                </section>
+            </section>
+            <section class="sec_area sec_area6">
+                <section class="sec sec7 map ">
+                    <div class="inner">
+                        <div class="map_tit  aniBox ani_left">
+                            <h2><img src="../assets/img/tit_contactus.svg" alt="Contact us"></h2>
+                            <button type="button" class="btn_popup_contact" aria-label="open contact popup" onclick="contact_popup()"></button>
+                        </div>
+                        <div class="map_wrap">
+                            <ul class="map_info ">
+                                <li class="map_info_item on">
+                                    <div class="tit" onclick="toggle_mapInfo(0)">본사</div>
+                                    <div class="cont">
+                                        <p class="address">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</p>
+                                        <dl class="number">
+                                            <dt>전화</dt>
+                                            <dd>02-431-5500</dd>
+                                            <dt>팩스</dt>
+                                            <dd>02-431-5510</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li class="map_info_item">
+                                    <div class="tit" onclick="toggle_mapInfo(1)">강남사무실</div>
+                                    <div class="cont">
+                                        <p class="address">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</p>
+                                        <dl class="number">
+                                            <dt>전화</dt>
+                                            <dd>02-431-5500</dd>
+                                            <dt>팩스</dt>
+                                            <dd>02-431-5510</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li class="map_info_item">
+                                    <div class="tit" onclick="toggle_mapInfo(2)">물류1</div>
+                                    <div class="cont">
+                                        <p class="address">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</p>
+                                        <dl class="number">
+                                            <dt>전화</dt>
+                                            <dd>02-431-5500</dd>
+                                            <dt>팩스</dt>
+                                            <dd>02-431-5510</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li class="map_info_item">
+                                    <div class="tit" onclick="toggle_mapInfo(3)">물류2</div>
+                                    <div class="cont">
+                                        <p class="address">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</p>
+                                        <dl class="number">
+                                            <dt>전화</dt>
+                                            <dd>02-431-5500</dd>
+                                            <dt>팩스</dt>
+                                            <dd>02-431-5510</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="map" class="map_view  aniBox ani_fade"></div>
+                        </div> 
+                    </div>
+
+
+                    <div class="popup_contact">
+                        <div class="popup_contact_inner">
+                            <div class="popup_contact_cont">
+                                <button type="button" class="btn_close_popup" onclick="close_popup_contact()" aria-label="close popup"></button>
+                                <h2 class="tit">고객문의</h2>
+                                <p class="desc">궁금하신 문의사항을 보내주시면 최대한 신속하게 답변 해드리겠습니다. <br> 답변을 위해 이메일을 정확하게 입력하여 주십시오.</p>
+                                <form action="" class="contact_form" onsubmit="return validateForm(event)">
+                                    <div class="contact_input_wrap">
+                                        <div class="input_item">
+                                            <input type="text" class="f_input required" id="name" placeholder="성명*" >
+                                            <small class="f_alert"></small>
+                                        </div>
+                                        <div class="input_item w50">
+                                            <input type="email" class="f_input required"  id="email" placeholder="이메일*" >
+                                            <small class="f_alert"></small>
+                                        </div>
+                                        <div class="input_item w50">
+                                            <input type="tel" class="f_input required"  id="tel" placeholder="전화번호*" >
+                                            <small class="f_alert"></small>
+                                        </div>
+                                        <div class="input_item">
+                                            <input type="text" class="f_input required" id="title" placeholder="문의 제목*" >
+                                            <small class="f_alert"></small>
+                                        </div>
+                                        <div class="input_item">
+                                            <textarea name="" id="text" class="f_ta required" placeholder="문의 내용*" ></textarea>
+                                            <small class="f_alert"></small>
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="문의하기" class="f_btn _fc">
+                                </form>
+
+                                <script>
+
+                                    
+
+
+                                    function getFieldName(input) {
+                                        const str = input.getAttribute('placeholder').slice(0,-1);
+                                        const lastChar = str.charCodeAt(str.length - 1);
+                                        const isThereLastChar = (lastChar - 0xac00) % 28;
+                                        if (isThereLastChar){
+                                            return str + '은'
+                                        }
+                                        return str + '는'
+                                    }
+
+                                    function checkRequired(inputArr) {
+                                        
+                                        inputArr.forEach(function(input){
+                                            if(input.value.trim() === ''){
+                                                showError(input,`${getFieldName(input)} 필수 항목입니다.`);
+                                                
+                                            }else {
+                                                showSucces(input);
+                                                
+                                            }
+                                        });
+                                    
+                                    }
+
+                                    function removeMsg(inputArr) {
+                                        
+                                        inputArr.forEach(function(input){
+                                        
+                                            const formControl = input.parentElement;
+                                            formControl.classList.remove('success');
+                                            formControl.classList.remove('error');
+                                            const small = formControl.querySelector('.f_alert');
+                                            small.innerText = ''
+                                        });
+                                    
+                                    }
+                
+
+                                    function showError(input, message) {
+                                        const formControl = input.parentElement;
+                                        formControl.classList.remove('success');
+                                        formControl.classList.add('error');
+                                        const small = formControl.querySelector('.f_alert');
+                                        small.innerText = message;
+                                    }
+
+                                    function showSucces(input) {
+                                        const formControl = input.parentElement;
+                                        formControl.classList.remove('error');
+                                        formControl.classList.add('success');
+                                    }
+
+                                
+
+                                
+
+                                    function validateForm(event){
+                                        const required = document.querySelectorAll('.contact_form .required');
+                                        event.preventDefault();
+                                        checkRequired(required);
+                                    }
+
+                                    function close_popup_contact(){
+                                        const popup_contact = document.querySelector('.popup_contact');
+                                        const contact_form = document.querySelector('.contact_form');
+                                        const required = document.querySelectorAll('.contact_form .required');
+                                        contact_form.reset();
+                                        removeMsg(required);
+                                        popup_contact.classList.remove('on');
+
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
         </div>
         <footer id="footer" class="footer">

@@ -247,6 +247,53 @@ document.querySelector('.btn_top').addEventListener('click',()=>{
     });
 });
 
+function gnb_link(sec){
+    let pos = document.querySelector(sec);
+    const h_h = document.querySelector('#header').offsetHeight
+    gsap.to(window, .8,{
+        scrollTo:pos.offsetTop - h_h
+    })
+}
+
+const gnb_pos = () => {
+    const elements = document.querySelectorAll(".sec_area");
+    const nav_item = document.querySelectorAll('.nav_item');
+    elements.forEach((e, i)=>{
+        
+        ScrollTrigger.create({
+            trigger: e,
+            start: `top center`,
+            end: `bottom center`,
+            onEnter: function() {
+                
+                nav_item[i].classList.add('on');
+            },
+           
+            onEnterBack: function() {
+                
+                nav_item[i].classList.add('on');
+            },
+            onLeave: function() {
+                nav_item.forEach((nav)=>{
+                    nav.classList.remove('on')
+                })
+                //nav_item[i].classList.add('on');
+            },
+            onLeaveBack: function() {
+                nav_item.forEach((nav)=>{
+                    nav.classList.remove('on')
+                })
+                //nav_item[i].classList.add('on');
+            },
+            
+            invalidateOnRefresh:true,
+           //markers: true,
+        });
+    });
+}
+
+
+['DOMContentLoaded', 'scroll'].forEach(event => window.addEventListener(event, gnb_pos()));
 
 /* header */
 const mv_wrap = document.querySelector('.mv_wrap');
@@ -643,18 +690,35 @@ function partner_add(add_count){
 }
 
 
+function contact_popup(){
+    const popup_contact = document.querySelector('.popup_contact');
+    popup_contact.classList.add('on');
+}
+
+
+function toggle_mapInfo(idx){
+    const map_info_item = document.querySelectorAll('.map_info_item');
+    map_info_item.forEach((e,i)=>{
+        e.classList.remove('on')
+        if(idx == i){
+            e.classList.add('on') 
+        }
+    })
+}
+
+
  // 37.495583, 127.135190
- var elluce = new naver.maps.LatLng(37.495583, 127.135190)
- var map = new naver.maps.Map('map', {
+ const elluce = new naver.maps.LatLng(37.495583, 127.135190)
+ const map = new naver.maps.Map('map', {
    center: new naver.maps.LatLng(37.495583, 127.135190),
-   zoom: 17,
+   zoom: 16,
    minZoom: 8, //지도의 최소 줌 레벨
    scrollWheel: false,
    zoomControl: true, //줌 컨트롤의 표시 여부
    zoomControlOptions: { //줌 컨트롤의 옵션
        position: naver.maps.Position.TOP_RIGHT
  }});
- var marker = new naver.maps.Marker({
+ const marker = new naver.maps.Marker({
      icon: {
        url: "../assets/img/marker.webp",
        scaledSize: new naver.maps.Size(30, 30),
@@ -664,14 +728,13 @@ function partner_add(add_count){
      map: map
  });
 
- var contentString = [
- '<div class="info_desc" >',
- '   <h2>쉬즈라인</h2>',
- //'   <p>서울 송파구 오금로46길 10-1 쉬즈빌딩</p>',
- '</div>'
+ const contentString = [
+ `<div class="marker_desc" >
+    <h2>She's Line</h2>
+ </div>`
  ].join('');
 
- var infowindow = new naver.maps.InfoWindow({
+ const infowindow = new naver.maps.InfoWindow({
      content: contentString,
      //maxWidth: 300,
     
