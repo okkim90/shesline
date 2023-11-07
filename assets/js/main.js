@@ -213,6 +213,8 @@ const toggleActiveOnViewport = () => {
             trigger: e,
             start: `-${matrixY} bottom`,
             end: `bottom-=${matrixY} top`,
+            // start: 'top bottom',
+            // end : 'bottom top',
             onEnter: function() {
                 e.classList.add('gogo');
                 
@@ -251,8 +253,8 @@ function gnb_link(sec){
     let pos = document.querySelector(sec);
     const h_h = document.querySelector('#header').offsetHeight
     gsap.to(window, .8,{
-        scrollTo:pos.offsetTop - h_h
-    })
+        scrollTo:pos
+    },Power2.easeInOut)
 }
 
 const gnb_pos = () => {

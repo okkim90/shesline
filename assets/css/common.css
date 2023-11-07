@@ -5450,17 +5450,20 @@ input::-webkit-search-results-decoration {
 }
 
 .popup_contact {
-  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
 }
 .popup_contact.on {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 .popup_contact .btn_close_popup {
   width: 50px;
