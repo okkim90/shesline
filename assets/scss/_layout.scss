@@ -246,6 +246,9 @@
     @include tablet {   
         padding: 60px 0;
     }
+    @include mobile {   
+        padding: 48px 0 60px;
+    }
     .inner {
         position: relative;
     }
@@ -298,6 +301,13 @@
         @include tablet {  
             width: 44px;
             height: 44px;
+        }
+        @include mobile {  
+            width: 38px;
+            height: 38px;
+            top: auto;
+            right: 24px;
+            bottom: 0;
         }
        
         &::after {
@@ -1472,15 +1482,15 @@
 
         }
         @include mobile {
-            margin-top: 32px;
-            @include flex_gap(2 ,12px, 30px);
+            margin-top: 30px;
+            @include flex_gap(2 , 0px , 25px);
 
         }
     }
     &_item {
         text-align: center;
         font-size: 16px;
-        line-height: 60px;
+        //line-height: 60px;
         display: none;
         filter: grayscale(100%);
         &.on {
