@@ -551,6 +551,11 @@
     //background-color: #000;
     height: 680px;
     background-color: #000;
+    @include tablet {
+        background-image: url(../img/cover_bg.jpg);
+        background-size: cover;
+        height: 400px;
+    }
     
 }
 .cover_img {
@@ -569,6 +574,10 @@
     
     left: 0;
     //transition: none !important;
+
+    @include tablet {
+        display: none;
+    }
 }
 
 // .cover_bg {

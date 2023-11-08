@@ -4909,6 +4909,13 @@ input::-webkit-search-results-decoration {
   height: 680px;
   background-color: #000;
 }
+@media (max-width: 1024px) {
+  .cover_box {
+    background-image: url(../img/cover_bg.jpg);
+    background-size: cover;
+    height: 400px;
+  }
+}
 
 .cover_img {
   height: 100%;
@@ -4920,6 +4927,11 @@ input::-webkit-search-results-decoration {
   width: 100%;
   top: -100%;
   left: 0;
+}
+@media (max-width: 1024px) {
+  .cover_img {
+    display: none;
+  }
 }
 
 .fill_txt_box {

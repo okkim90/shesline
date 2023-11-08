@@ -746,57 +746,75 @@ function toggle_mapInfo(idx){
         if(idx == i){
             e.classList.add('on') 
         }
-    })
+    });
+    //map_load(idx)
 }
 
 
  // 37.495583, 127.135190
- const elluce = new naver.maps.LatLng(37.495583, 127.135190)
- const map = new naver.maps.Map('map', {
-   center: new naver.maps.LatLng(37.495583, 127.135190),
-   zoom: 16,
-   minZoom: 8, //지도의 최소 줌 레벨
-   scrollWheel: false,
-   zoomControl: true, //줌 컨트롤의 표시 여부
-   zoomControlOptions: { //줌 컨트롤의 옵션
-       position: naver.maps.Position.TOP_RIGHT
- }});
- const marker = new naver.maps.Marker({
-     icon: {
-       url: "../assets/img/marker.webp",
-       scaledSize: new naver.maps.Size(30, 30),
-       origin: new naver.maps.Point(0, 0),
-     },
-     position: elluce,
-     map: map
- });
+// 37.495119, 127.036243
+const map_data = [
+    {loc:'본사', posX: 37.495583, posY:127.135190},
+    {loc:'강남', posX: 37.495119, posY:127.036243},
+    {loc:'물류1', posX: 37.578629, posY:127.229863},
+    {loc:'물류2', posX: 37.333963, posY:127.371458}
+]
+map_load(0);
+ function map_load(idx){
+   
+    let posX, posY, loc;
+    loc = map_data[idx].loc;
+    posX = map_data[idx].posX;
+    posY = map_data[idx].posY;
 
- const contentString = [
- `<div class="marker_desc" >
-    <h2>She's Line</h2>
- </div>`
- ].join('');
-
- const infowindow = new naver.maps.InfoWindow({
-     content: contentString,
-     //maxWidth: 300,
-    
-     backgroundColor: "transparent",
-     borderWidth: 0,
-     disableAnchor: true,
-     textAlign: "center",
-     margin: "auto",
-
-     pixelOffset: new naver.maps.Point(0, -10)
- });
- /*
- naver.maps.Event.addListener(marker, "click", function(e) {
-     if (infowindow.getMap()) {
-         infowindow.close();
-     } else {
-         infowindow.open(map, marker);
-     }
- });
- */
-
- infowindow.open(map, marker);
+    const elluce = new naver.maps.LatLng(posX, posY)
+    const map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(posX, posY),
+      zoom: 16,
+      minZoom: 8, //지도의 최소 줌 레벨
+      scrollWheel: false,
+      zoomControl: true, //줌 컨트롤의 표시 여부
+      zoomControlOptions: { //줌 컨트롤의 옵션
+          position: naver.maps.Position.TOP_RIGHT
+    }});
+    const marker = new naver.maps.Marker({
+        icon: {
+          url: "../assets/img/marker.webp",
+          scaledSize: new naver.maps.Size(30, 30),
+          origin: new naver.maps.Point(0, 0),
+        },
+        position: elluce,
+        map: map
+    });
+   
+    const contentString = [
+    `<div class="marker_desc" >
+       <h2>She's Line [${loc}]</h2>
+    </div>`
+    ].join('');
+   
+    const infowindow = new naver.maps.InfoWindow({
+        content: contentString,
+        //maxWidth: 300,
+       
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        disableAnchor: true,
+        textAlign: "center",
+        margin: "auto",
+   
+        pixelOffset: new naver.maps.Point(0, -10)
+    });
+    /*
+    naver.maps.Event.addListener(marker, "click", function(e) {
+        if (infowindow.getMap()) {
+            infowindow.close();
+        } else {
+            infowindow.open(map, marker);
+        }
+    });
+    */
+   
+    infowindow.open(map, marker);
+ }
+ 
