@@ -197,9 +197,11 @@ const qweqwe = () => {
         arr.push(
             `
             <li class="brand_item col_item">
-                <div class="img_box" style="background-image:url('${e.img}')"  onclick="brand_popup(${i})" aria-label="Toolif popup">
-                    <img src="${e.logo}" alt="${e.title}">
+                <div class="img_box" onclick="brand_popup(${i})" aria-label="Toolif popup">
+                    <div class="bg_box" style="background-image:url('${e.pop_img}')"></div>
+                    <img src="${e.logo}" alt="${e.title}" class="brand_logo brand_logo_${i}">
                     <button type="button" class="btn_popup"></button>
+                    <!--<img src="${e.pop_img}" alt="${e.title}" class="hidden">-->
                 </div>
             </li>
             `
@@ -515,8 +517,20 @@ const ha_list = new Swiper('.ha_list',{
     loop : false,
     //speed : 600,
     slidesPerView: 4,
-    spaceBetween: 30,
+    spaceBetween: 40,
     grabCursor: true,
+    breakpoints: {
+        767: {
+          slidesPerView: 2,  
+          spaceBetween: 20,
+          //freeMode:true,
+          slidesPerView: 1.6
+        },
+        1024: {
+          slidesPerView: 3,  
+          spaceBetween: 30,
+        }
+    },
     navigation: {
         nextEl: '.ha_next',
         prevEl: '.ha_prev',
@@ -589,9 +603,26 @@ const prod_list = new Swiper('.prod_list',{
     scrollbar: {
         el: ".prod-scrollbar",
         //hide: true,
-        dragSize: 200,
+        dragSize: 260,
         draggable: true,
     },
+    breakpoints: {
+        767: {
+          slidesPerView: 1,  
+          spaceBetween: 12,
+          
+        },
+        1024: {
+            slidesPerView: 2,  
+            spaceBetween: 50,
+            spaceBetween: 16,
+            scrollbar: { 
+                dragSize: 100,
+            },
+        
+        }
+    }
+    
 });
 
 /* partner */
@@ -662,12 +693,33 @@ const setPartnerBtn = (()=>{
 
 
 let pcount = ()=>{
-    if (window.innerWidth < 1025) {
+    if (window.innerWidth < 768) {
+        return 10;
+    }else if(window.innerWidth >= 768 && window.innerWidth < 1025){
         return 15;
-    }else{
+    }else if(window.innerWidth >= 1025) {
         return 20;
     }
 }
+let add_count = ()=>{
+
+    if (window.innerWidth < 768) {
+        return 2;
+    }else if(window.innerWidth < 1025){
+        return 3;
+    }else {
+        return 4;
+    }
+};
+window.addEventListener('resize', ()=>{
+    //pcount();
+    partner_count(pcount());
+    add_count();
+});
+
+
+
+
 
 const setPartner = (filter)=>{
     let arr = [];
@@ -711,25 +763,31 @@ const setPartner = (filter)=>{
 setPartner('Korea');
 
 
+
+
 function partner_count(count){
     let partner_item = document.querySelectorAll('.partner_item');
     let partner_cont_btn = document.querySelector('.partner_cont_btn');
     partner_item.length > count ? partner_cont_btn.classList.add('on') : partner_cont_btn.classList.remove('on');
     partner_item.forEach((e,i)=>{
+        e.classList.remove('on');
         i < count ? e.classList.add('on') : null
     });
 }
 
-function partner_add(add_count){
+function partner_add(){
     let partner_item = document.querySelectorAll('.partner_item');
     let partner_item_length = document.querySelectorAll('.partner_item.on').length;
     let partner_cont_btn = document.querySelector('.partner_cont_btn');
     
     partner_item.forEach((e,i)=>{
-        i < partner_item_length + add_count ? e.classList.add('on') : null
+        i < partner_item_length + add_count() ? e.classList.add('on') : null
     });
     //console.log(partner_item_length);
+
     document.querySelectorAll('.partner_item.on').length == partner_item.length ? partner_cont_btn.classList.remove('on') : partner_cont_btn.classList.add('on');
+    ScrollTrigger.refresh();
+
 }
 
 
