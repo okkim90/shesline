@@ -1,10 +1,12 @@
+
+/*
 const marquee = () => {
     const marquee = document.querySelectorAll('.marquee');
     marquee.forEach((e)=>{
         let marqueeCont = e.querySelector('.marquee_txt');
         //console.log(marqueeCont);
-        e.append(marqueeCont.cloneNode(true));
-        e.append(marqueeCont.cloneNode(true));
+        // e.append(marqueeCont.cloneNode(true));
+        // e.append(marqueeCont.cloneNode(true));
         let marquee_width = parseInt(
             getComputedStyle(marqueeCont).getPropertyValue('width'), 10
         );
@@ -12,27 +14,29 @@ const marquee = () => {
             getComputedStyle(e).getPropertyValue('gap'), 10
         );
         let dir = e.dataset.marqueeDir;
-        console.log(dir);
+        //console.log(dir);
+        const moveLeft = 1 * ( marquee_width + marquee_gap);
+        const moveRight = -1 * ( marquee_width + marquee_gap);
         if(dir === 'left'){
-            const move = -1 * ( marquee_width + marquee_gap);
+            
             gsap.fromTo(
                 e.children,
                 {x: 0},
                 {
-                    x: move,
+                    x: moveLeft,
                     duration: 16,
-                    ease : "none",
+                    ease : "linear",
                     repeat:-1
                 }
-            )
+            ).totalProgress(0.5)
         }
         if(dir === 'right'){
-            const move = 1 * ( marquee_width + marquee_gap);
+            
             gsap.fromTo(
                 e.children,
                 {x: 0},
                 {
-                    x: move,
+                    x: moveRight,
                     duration: 16,
                     ease : "none",
                     repeat:-1
@@ -42,12 +46,48 @@ const marquee = () => {
     });  
 }
 document.addEventListener("DOMContentLoaded",marquee);
+*/
 
+let marquee_left = gsap.to('.dir_left .marquee_txt',{
+    xPercent: -100,
+    repeat:-1,
+    duration:16,
+    ease:'linear',
+}).totalProgress(0.5);
+
+let marquee_right = gsap.to('.dir_right .marquee_txt',{
+    xPercent: 100,
+    repeat:-1,
+    duration:16,
+    ease:'linear',
+}).totalProgress(0.5);
+
+let currentScroll = 0;
+let isScrollingDown = true;
+window.addEventListener("scroll", function(){
+  
+    if ( window.pageYOffset > currentScroll ) {
+        isScrollingDown = true;
+        //console.log('down');
+    } else {
+        isScrollingDown = false;
+        //console.log('down');
+    }
+        
+    gsap.to(marquee_left, {
+        timeScale: isScrollingDown ? 1 : -1
+    });
+    gsap.to(marquee_right, {
+        timeScale: isScrollingDown ? 1 : -1
+    });
+
+    currentScroll = window.pageYOffset
+});
 
 
 
 let fill_txt_box = document.querySelector('.fill_txt_box');
-let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력,/적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다./IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여/높은 수준의 제품과 품질 제공을 약속합니다.`
+let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력,/ 적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다./IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여/높은 수준의 제품과 품질 제공을 약속합니다.`
 let fil_arr = fill_txt.split("");
 
 fil_arr.forEach((e)=>{
@@ -431,13 +471,13 @@ function cover(){
             //end: ()=> `+=${cover_img_h}`,
             end: "bottom bottom",
             pinSpacing: false,
-            //scrub:true,
+            scrub:0.3,
             pin: '.cover_img',
             //markers:true,
             invalidateOnRefresh:true
         }
     }).to('.cover_img',{
-        //opacity:1,
+        opacity:1,
         duration:3,
         ease:'none'
     });
@@ -549,6 +589,7 @@ const prod_list = new Swiper('.prod_list',{
     scrollbar: {
         el: ".prod-scrollbar",
         //hide: true,
+        dragSize: 200,
         draggable: true,
     },
 });

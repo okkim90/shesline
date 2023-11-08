@@ -9,6 +9,7 @@
     margin: 0 auto;
     padding: 0 50px;
     box-sizing: content-box;
+    
 }
 
 #header {
@@ -23,22 +24,66 @@
     align-items: center;
     padding: 0 60px;
     transition: all .2s ease-in-out;
+    @include tablet { 
+        justify-content: space-between;
+        padding: 0 36px;
+        height: 60px;
+    }
     h1 {
         line-height: 80px;
         font-size: 28px;
         font-weight: 700;
+        @include tablet {  
+            font-size: 22px;
+            line-height: 60px;
+        }
     }
     .nav {
         margin-left: auto;
+
+        @include tablet {
+            position: fixed;
+            right: 36px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+        }
+            
         &_list {
             display: flex;
             gap: 48px;
+            @include tablet {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
         &_item {
             font-size: 18px;
             line-height: 1.5;
             font-weight: 500;
             position: relative;
+            @include tablet {
+                padding-right: 20px;
+                opacity: 0.3;
+                a {
+                    order: 0;
+                    font-size: 12px;
+                    color: $c_fc;
+                }
+                &::before {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -4px;
+                    content:'';
+                    
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: $c_fc;
+
+                }
+            }
             &::after {
                 transition: all .2s ease-in-out;
                 content: '';
@@ -48,6 +93,9 @@
                 background-color: #fff;
                 bottom: 0;
                 left: 0;
+                @include tablet { 
+                    display: none;
+                }
             }
             a {
                 display: block;
@@ -56,7 +104,9 @@
                 &::after {
                     width: 100%;
                 }
-               
+                @include tablet { 
+                    opacity: 1;
+                }
             }
         }
         
@@ -172,12 +222,19 @@
     padding: 100px 0;
     color: #fff;
     
+
+    @include tablet {   
+        padding: 60px 0;
+    }
     .inner {
         position: relative;
     }
     &_tit {
         font-size: 26px;
         font-weight: bold;
+        @include tablet {   
+            font-size: 20px;
+        }
     }
     &_info {
         margin-top: 48px;
@@ -194,6 +251,12 @@
             display: block;
             margin-top: 2px;
             
+        }
+
+        @include tablet {   
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
         }
     }
     .copy {
@@ -212,7 +275,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-       
+        @include tablet {  
+            width: 44px;
+            height: 44px;
+        }
        
         &::after {
             content:'';
@@ -257,6 +323,9 @@
             .mv_txt_btn {
                 border-color: #A55C31;
                 color: #A55C31;
+                &:hover {
+                    background-color: rgba(#A55C31, .06);
+                }
                 &::after {
                     background-image: url(../img/arrow-right_brown.svg);
                 }
@@ -266,11 +335,17 @@
             font-size: 60px;
             line-height: 1.23;
             font-weight: bold;
+            @include tablet {  
+                font-size: 48px;
+            }
         }
         .txt_s {
             font-size: 18px;
             line-height: 1.55;
             margin-top: 1.8em;
+            @include tablet {   
+                font-size: 14px;
+            }
         }
         &_btn {
             display: inline-flex;
@@ -284,6 +359,7 @@
             color: #fff;
             font-size: 16px;
             margin-top: 60px;
+            transition: background-color .2s ease-in-out;
             &::after {
                 content: '';
                 width: 15px;
@@ -293,6 +369,22 @@
                 background-size: contain;
                 background-position: center center;
                 margin-left: 10px;
+            }
+            &:hover {
+                background-color: rgba(#fff, .06);
+                box-shadow: 0 0 6px rgba(#000, .1);
+            }
+            @include tablet {   
+                margin-top: 42px;
+                height: 44px;
+                line-height: 42px;
+                padding: 0 24px;
+                border-radius: 22px;
+                font-size: 14px;
+                &::after {
+                    width: 12px;
+                    height: 16px;
+                }
             }
         }
     }
@@ -415,6 +507,9 @@
 .sec {
 
     padding: 148px 0 164px;
+    @include tablet {  
+        padding: 88px 0 100px;
+    }
     &.bg_blk {
         background-color: $c_fc;
         color: #fff;
@@ -455,8 +550,7 @@
     overflow: hidden;
     //background-color: #000;
     height: 680px;
-   
-    //background-color: #000;
+    background-color: #000;
     
 }
 .cover_img {
@@ -466,7 +560,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    opacity: 1;
+    opacity: 0;
     //background-color: orange;
    
     width: 100%;
@@ -493,6 +587,9 @@
     font-weight: bold;
     text-align: center;
 
+    @include tablet { 
+        padding: 0 100px;
+    }
     .gap {
         display: inline-block;
         width: 0.6em;
@@ -528,6 +625,16 @@
             width: 100%;
            }
         }
+
+        @include tablet { 
+            font-size: 20px;
+            
+        }
+    }
+    @include tablet {
+        br {
+            display: none;
+        }
     }
 } 
 
@@ -536,11 +643,15 @@
 .marquee {
     &_wrap {
         padding: 220px 0 200px;
+        @include tablet {
+            padding: 100px 0 100px;
+        }
     }
     white-space: nowrap;
     display: flex;
-    gap: 4em;
+    
     //transform: translateX(-33.3333%);
+    
     &_txt {
         
         font-size: 100px;
@@ -552,6 +663,11 @@
         
         span {
             -webkit-text-fill-color: #BABABA;
+        }
+        padding-right: 0.6em;
+        @include tablet {
+            font-size: 48px;
+            -webkit-text-stroke-width: 1px;
         }
     }
     &.dir_left {
@@ -1128,7 +1244,7 @@
             background-image: url(../img/ico_contact.svg);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: contain;
             transform: translateX(-25px);
         }
     }

@@ -4402,23 +4402,73 @@ input::-webkit-search-results-decoration {
   padding: 0 60px;
   transition: all 0.2s ease-in-out;
 }
+@media (max-width: 1024px) {
+  #header {
+    justify-content: space-between;
+    padding: 0 36px;
+    height: 60px;
+  }
+}
 #header h1 {
   line-height: 80px;
   font-size: 28px;
   font-weight: 700;
 }
+@media (max-width: 1024px) {
+  #header h1 {
+    font-size: 22px;
+    line-height: 60px;
+  }
+}
 #header .nav {
   margin-left: auto;
+}
+@media (max-width: 1024px) {
+  #header .nav {
+    position: fixed;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+  }
 }
 #header .nav_list {
   display: flex;
   gap: 48px;
+}
+@media (max-width: 1024px) {
+  #header .nav_list {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 #header .nav_item {
   font-size: 18px;
   line-height: 1.5;
   font-weight: 500;
   position: relative;
+}
+@media (max-width: 1024px) {
+  #header .nav_item {
+    padding-right: 20px;
+    opacity: 0.3;
+  }
+  #header .nav_item a {
+    order: 0;
+    font-size: 12px;
+    color: #353535;
+  }
+  #header .nav_item::before {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -4px;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #353535;
+  }
 }
 #header .nav_item::after {
   transition: all 0.2s ease-in-out;
@@ -4430,11 +4480,21 @@ input::-webkit-search-results-decoration {
   bottom: 0;
   left: 0;
 }
+@media (max-width: 1024px) {
+  #header .nav_item::after {
+    display: none;
+  }
+}
 #header .nav_item a {
   display: block;
 }
 #header .nav_item.on::after {
   width: 100%;
+}
+@media (max-width: 1024px) {
+  #header .nav_item.on {
+    opacity: 1;
+  }
 }
 #header.on {
   background-color: #fff;
@@ -4530,12 +4590,22 @@ input::-webkit-search-results-decoration {
   padding: 100px 0;
   color: #fff;
 }
+@media (max-width: 1024px) {
+  .footer {
+    padding: 60px 0;
+  }
+}
 .footer .inner {
   position: relative;
 }
 .footer_tit {
   font-size: 26px;
   font-weight: bold;
+}
+@media (max-width: 1024px) {
+  .footer_tit {
+    font-size: 20px;
+  }
 }
 .footer_info {
   margin-top: 48px;
@@ -4551,6 +4621,13 @@ input::-webkit-search-results-decoration {
 .footer_info .cont {
   display: block;
   margin-top: 2px;
+}
+@media (max-width: 1024px) {
+  .footer_info {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
 }
 .footer .copy {
   margin-top: 24px;
@@ -4568,6 +4645,12 @@ input::-webkit-search-results-decoration {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1024px) {
+  .footer .btn_top {
+    width: 44px;
+    height: 44px;
+  }
 }
 .footer .btn_top::after {
   content: "";
@@ -4612,6 +4695,9 @@ input::-webkit-search-results-decoration {
   border-color: #A55C31;
   color: #A55C31;
 }
+.mv_txt.ty_brown .mv_txt_btn:hover {
+  background-color: rgba(165, 92, 49, 0.06);
+}
 .mv_txt.ty_brown .mv_txt_btn::after {
   background-image: url(../img/arrow-right_brown.svg);
 }
@@ -4620,10 +4706,20 @@ input::-webkit-search-results-decoration {
   line-height: 1.23;
   font-weight: bold;
 }
+@media (max-width: 1024px) {
+  .mv_txt .txt_l {
+    font-size: 48px;
+  }
+}
 .mv_txt .txt_s {
   font-size: 18px;
   line-height: 1.55;
   margin-top: 1.8em;
+}
+@media (max-width: 1024px) {
+  .mv_txt .txt_s {
+    font-size: 14px;
+  }
 }
 .mv_txt_btn {
   display: inline-flex;
@@ -4637,6 +4733,7 @@ input::-webkit-search-results-decoration {
   color: #fff;
   font-size: 16px;
   margin-top: 60px;
+  transition: background-color 0.2s ease-in-out;
 }
 .mv_txt_btn::after {
   content: "";
@@ -4647,6 +4744,24 @@ input::-webkit-search-results-decoration {
   background-size: contain;
   background-position: center center;
   margin-left: 10px;
+}
+.mv_txt_btn:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .mv_txt_btn {
+    margin-top: 42px;
+    height: 44px;
+    line-height: 42px;
+    padding: 0 24px;
+    border-radius: 22px;
+    font-size: 14px;
+  }
+  .mv_txt_btn::after {
+    width: 12px;
+    height: 16px;
+  }
 }
 .mv_img {
   position: absolute;
@@ -4754,6 +4869,11 @@ input::-webkit-search-results-decoration {
 .sec {
   padding: 148px 0 164px;
 }
+@media (max-width: 1024px) {
+  .sec {
+    padding: 88px 0 100px;
+  }
+}
 .sec.bg_blk {
   background-color: #353535;
   color: #fff;
@@ -4787,6 +4907,7 @@ input::-webkit-search-results-decoration {
 .cover_box {
   overflow: hidden;
   height: 680px;
+  background-color: #000;
 }
 
 .cover_img {
@@ -4795,7 +4916,7 @@ input::-webkit-search-results-decoration {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  opacity: 1;
+  opacity: 0;
   width: 100%;
   top: -100%;
   left: 0;
@@ -4804,6 +4925,11 @@ input::-webkit-search-results-decoration {
 .fill_txt_box {
   font-weight: bold;
   text-align: center;
+}
+@media (max-width: 1024px) {
+  .fill_txt_box {
+    padding: 0 100px;
+  }
 }
 .fill_txt_box .gap {
   display: inline-block;
@@ -4831,14 +4957,28 @@ input::-webkit-search-results-decoration {
 .fill_txt_box .fill_txt_item.on::after {
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .fill_txt_box .fill_txt_item {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .fill_txt_box br {
+    display: none;
+  }
+}
 
 .marquee {
   white-space: nowrap;
   display: flex;
-  gap: 4em;
 }
 .marquee_wrap {
   padding: 220px 0 200px;
+}
+@media (max-width: 1024px) {
+  .marquee_wrap {
+    padding: 100px 0 100px;
+  }
 }
 .marquee_txt {
   font-size: 100px;
@@ -4847,9 +4987,16 @@ input::-webkit-search-results-decoration {
   -webkit-text-stroke: #BABABA;
   -webkit-text-stroke-width: 3px;
   -webkit-text-fill-color: transparent;
+  padding-right: 0.6em;
 }
 .marquee_txt span {
   -webkit-text-fill-color: #BABABA;
+}
+@media (max-width: 1024px) {
+  .marquee_txt {
+    font-size: 48px;
+    -webkit-text-stroke-width: 1px;
+  }
 }
 .marquee.dir_left {
   transform: translateX(-100%);
@@ -5381,7 +5528,7 @@ input::-webkit-search-results-decoration {
   background-image: url(../img/ico_contact.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   transform: translateX(-25px);
 }
 .map_wrap {
