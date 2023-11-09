@@ -48,6 +48,11 @@ const marquee = () => {
 document.addEventListener("DOMContentLoaded",marquee);
 */
 
+['DOMContentLoaded', 'resize'].forEach(event => window.addEventListener(event, function (ev) {
+    const { innerHeight } = window;
+    document.documentElement.style.setProperty("--app-height",`${innerHeight}px`);
+}));
+
 let marquee_left = gsap.to('.dir_left .marquee_txt',{
     xPercent: -100,
     repeat:-1,

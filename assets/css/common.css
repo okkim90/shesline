@@ -4723,10 +4723,10 @@ input::-webkit-search-results-decoration {
 }
 
 .mv_wrap {
-  height: 100vh;
+  height: var(--app-height);
 }
 .mv_item {
-  height: 100vh;
+  height: var(--app-height);
   position: relative;
   display: flex;
   align-items: center;
