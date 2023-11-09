@@ -316,17 +316,24 @@ window.addEventListener('DOMContentLoaded', toggleActiveOnViewport);
 /* go to top */
 document.querySelector('.btn_top').addEventListener('click',()=>{
     let body = document.getElementsByTagName('body')[0];
-    gsap.to(window, .8,{
-        scrollTo:body.offsetTop
-    });
+   
+    gsap.to(window,{
+        duration: 0.8,
+        ease: "power2.inOut",
+        scrollTo:body.offsetTop,
+        delay:  0.06
+    })
 });
 
 function gnb_link(sec){
     let pos = document.querySelector(sec);
     const h_h = document.querySelector('#header').offsetHeight
-    gsap.to(window, .8,{
-        scrollTo:pos
-    },Power2.easeInOut)
+    gsap.to(window,{
+        duration: 0.8,
+        ease: "power2.inOut",
+        scrollTo:pos,
+        delay:  0.06
+    })
 }
 
 const gnb_pos = () => {
