@@ -4466,6 +4466,7 @@ input::-webkit-search-results-decoration {
     top: 50%;
     transform: translateY(-50%);
     text-align: right;
+    transition: all 0.2s ease-in-out;
   }
 }
 @media (max-width: 767px) {
