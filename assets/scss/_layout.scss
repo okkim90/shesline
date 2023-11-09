@@ -323,11 +323,11 @@
 }
 .mv {
     &_wrap {
-        //height: 100vh;
-        height: var(--app-height);
+        position: relative;
     }
     &_item {
-        height: var(--app-height);
+        
+        height: calc(var(--vh, 1vh) * 100);
         position: relative;
         display: flex;
         align-items: center;
