@@ -5846,6 +5846,9 @@ input::-webkit-search-results-decoration {
   }
 }
 
+.prod_list {
+  position: relative;
+}
 .prod_list .prod-scrollbar {
   margin-top: 70px;
   height: 4px;

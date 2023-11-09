@@ -1417,6 +1417,7 @@
 
 .prod {
     &_list {
+        position: relative;
         .prod-scrollbar {
             margin-top: 70px;
             height: 4px;
