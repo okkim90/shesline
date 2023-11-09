@@ -610,7 +610,9 @@ const prod_list = new Swiper('.prod_list',{
         767: {
           slidesPerView: 1,  
           spaceBetween: 12,
-          
+          scrollbar: { 
+            dragSize: 50,
+        },
         },
         1024: {
             slidesPerView: 2,  
@@ -705,16 +707,28 @@ let add_count = ()=>{
 
     if (window.innerWidth < 768) {
         return 2;
-    }else if(window.innerWidth < 1025){
+    }else if(window.innerWidth >= 768 && window.innerWidth < 1025){
         return 3;
     }else {
         return 4;
     }
 };
+let prev_pcount = pcount();
+let timer;
 window.addEventListener('resize', ()=>{
-    //pcount();
-    partner_count(pcount());
-    add_count();
+    let next_pcount = pcount();
+    clearTimeout(timer);
+    timer = setTimeout(()=>{
+        if(prev_pcount == next_pcount){
+            
+        }else{
+            prev_pcount = next_pcount
+            partner_count(prev_pcount);
+        }
+        
+        add_count();
+    },300);
+  
 });
 
 
