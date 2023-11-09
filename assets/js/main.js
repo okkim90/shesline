@@ -884,8 +884,11 @@ map_load(0);
       scrollWheel: false,
       zoomControl: true, //줌 컨트롤의 표시 여부
       zoomControlOptions: { //줌 컨트롤의 옵션
-          position: naver.maps.Position.TOP_RIGHT
-    }});
+          position: naver.maps.Position.TOP_RIGHT,
+          style: naver.maps.ZoomControlStyle.SMALL
+        },
+        
+    });
     const marker = new naver.maps.Marker({
         icon: {
           url: "../assets/img/marker.webp",
