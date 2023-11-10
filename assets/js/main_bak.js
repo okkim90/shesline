@@ -77,7 +77,7 @@ window.addEventListener('resize', ()=>{
     }
 });
  
-/*
+
 let marquee_left = gsap.to('.dir_left .marquee_txt',{
     xPercent: -100,
     repeat:-1,
@@ -91,59 +91,33 @@ let marquee_right = gsap.to('.dir_right .marquee_txt',{
     duration:16,
     ease:'linear',
 }).totalProgress(0.5);
-*/
-const marquee = document.querySelectorAll('.marquee');
-const marquee_cont = document.querySelector('.marquee_cont');
-gsap.to(marquee,{
-    duration:2,
-    x: 0,
-    scale: 1,
-    opacity: 1,
-    scrollTrigger : {
-        trigger: marquee_cont,
-        toggleActions: "play pause reverse none",
-        start: "top 100%",
-        end: "bottom 0",
-        scrub:1,
-        //markers:true,
-    }
-});
-
 
 let currentScroll = 0;
 let isScrollingDown = true;
-let scrollTimer;
 window.addEventListener("scroll", function(){
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(()=>{
-        if ( window.pageYOffset > currentScroll ) {
-            isScrollingDown = true;
-            //console.log('down');
-            header.classList.add('up');
-        } else {
-            isScrollingDown = false;
-            //console.log('down');
-            header.classList.remove('up');
-        }
-        currentScroll = window.pageYOffset
-    },100);
-    
-    /* 
+  
+    if ( window.pageYOffset > currentScroll ) {
+        isScrollingDown = true;
+        //console.log('down');
+    } else {
+        isScrollingDown = false;
+        //console.log('down');
+    }
+        
     gsap.to(marquee_left, {
         timeScale: isScrollingDown ? 1 : -1
     });
     gsap.to(marquee_right, {
         timeScale: isScrollingDown ? 1 : -1
     });
-    */
 
-    
+    currentScroll = window.pageYOffset
 });
 
 
 
 let fill_txt_box = document.querySelector('.fill_txt_box');
-let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력,/ 적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다./ IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여/높은 수준의 제품과 품질 제공을 약속합니다.`
+let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력,/ 적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다./IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여/높은 수준의 제품과 품질 제공을 약속합니다.`
 let fil_arr = fill_txt.split("");
 
 fil_arr.forEach((e)=>{

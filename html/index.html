@@ -12,9 +12,12 @@
     <script src="../assets/js/swiper.min.js"></script>
     <script src="../assets/js/smooth-scrollbar.js"></script>
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wsg9q435nj"></script>
-    <script src="../assets/js/main.js" defer></script>
+   
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/common.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <div id="wrap" >
@@ -32,11 +35,7 @@
                 </ul>
             </nav>
             <div class="lang">
-                <button type="button" class="lang_btn"><span class="lang_ico"></span> K R</button>
-                <ul class="lang_list">
-                    <li><a href="">E N G</a></li>
-                    <li><a href="">J P N</a></li>
-                </ul>
+                <a href="" class="lang_btn"><span class="lang_ico"></span> KR</a>
             </div>
         </header>
         <div class="mv_wrap">
@@ -96,17 +95,13 @@
                 <section class="sec sec1 ">
                     <div class="inner">
                         <div class="marquee_wrap">
-                            <div class="marquee dir_left " data-marquee-dir="left">
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                            </div>
-                            <div class="marquee dir_right " data-marquee-dir="right">
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
-                                <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                            <div class="marquee_cont">
+                                <div class="marquee dir_left " data-marquee-dir="left">
+                                    <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                                </div>
+                                <div class="marquee dir_right " data-marquee-dir="right">
+                                    <p class="marquee_txt">Present <span>Your Beauty</span> from Head to Toe.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="fill_txt_box   ani_bot"></div>   
@@ -120,11 +115,11 @@
                         <div class="cover_bg"></div>
                     </div>
                     <div class="inner">
-                        <div class="sec_tit  ani_bot">
+                        <div class="sec_tit" data-aos="fade-up">
                             <h2>회사 연혁 및 수상 내역</h2>
                             <p class="desc">(주)한국쉬즈라인은 1989년 창립 이후 다양한 카테고리의 뷰티 미용 소품을 <br> 기획 개발 제작하고 국내외 유통하는 한국 뷰티 전문 회사입니다.</p>
                         </div>
-                        <div class="ha  ani_bot">
+                        <div class="ha" data-aos="fade-up">
                             <div class="ha_btns">
                                 <button type="button" data-filter="history" onclick="ha_filter('history')" class="ha_btn btn_sort f_btn  on">회사 연혁</button>
                                 <button type="button" data-filter="award" onclick="ha_filter('award')" class="ha_btn btn_sort f_btn">수상 내역</button>
@@ -300,10 +295,10 @@
                 </section>
                 <section class="sec sec3 ccc bg_blk">
                     <div class="inner">
-                        <div class="sec_tit  ani_bot">
+                        <div class="sec_tit" data-aos="fade-up">
                             <h2>Company Core Competency</h2>
                         </div>
-                        <ul class="ccc_list  ani_bot">
+                        <ul class="ccc_list " data-aos="fade-up">
                             <li class="ccc_item col_item">
                                 <i class="ico_box"><img src="../assets/img/ccc_ico1.svg" alt=""></i>
                                 <strong class="tit">경험과 노하우</strong>
@@ -341,11 +336,11 @@
             <section class="sec_area sec_area3">
                 <section class="sec sec4 brand">
                     <div class="inner">
-                        <div class="sec_tit  ani_bot">
+                        <div class="sec_tit" data-aos="fade-up">
                             <h2>브랜드</h2>
                             <p class="desc">트렌디한 뷰티툴 전문 브랜드인 Toolif 와 톡톡 튀는 데일리 라이프 리빙 뷰티 소품 브랜드 Bubble Tok, <br> 하이엔드 헤어 액세서리 브랜드 OliveCrown 등의 브랜드를 전개하고 있습니다.</p>
                         </div>
-                        <ul class="brand_list  ani_bot"></ul>
+                        <ul class="brand_list" data-aos="fade-up"></ul>
                         <div class="brand_popup"></div>
                     </div>
                 </section>
@@ -353,10 +348,10 @@
             <section class="sec_area sec_area4">
                 <section class="sec sec5 bg_blk prod">
                     <div class="inner">
-                        <div class="sec_tit  ani_bot">
+                        <div class="sec_tit " data-aos="fade-up">
                             <h2>Products Line-up</h2>
                         </div>
-                        <div class="prod_list  ani_right">
+                        <div class="prod_list " data-aos="fade-left">
                             <div class="swiper-wrapper">  
                             </div>
                             <div class="prod-scrollbar"></div>
@@ -367,12 +362,12 @@
             <section class="sec_area sec_area5">
                 <section class="sec sec6 partner">
                     <div class="inner">
-                        <div class="sec_tit   ani_bot">
+                        <div class="sec_tit  " data-aos="fade-up">
                             <h2>유통처 및 파트너</h2>
                         </div>
-                        <div class="partner_cont   ani_bot">
-                            <div class="partner_sort"></div>
-                            <ul class="partner_list"></ul>
+                        <div class="partner_cont ">
+                            <div class="partner_sort" data-aos="fade-up"></div>
+                            <ul class="partner_list"  data-aos="fade-up"></ul>
                         </div>
                         <button type="button" onclick="partner_add()" class="partner_cont_btn">더보기<i></i></button>
                     </div>               
@@ -381,14 +376,14 @@
             <section class="sec_area sec_area6">
                 <section class="sec sec7 map ">
                     <div class="inner">
-                        <div class="map_tit   ani_left">
+                        <div class="map_tit"  data-aos="fade-right">
                             <h2><img src="../assets/img/tit_contactus.svg" alt="Contact us"></h2>
                             <button type="button" class="btn_popup_contact" aria-label="open contact popup" onclick="contact_popup()"></button>
                         </div>
 
                         <div class="map_wrap">
-                            <div id="map" class="map_view   ani_fade"></div>
-                            <ul class="map_info ">
+                            <div id="map" class="map_view  "  data-aos="fade-left"></div>
+                            <ul class="map_info " data-aos="fade-right">
                                 <li class="map_info_item on">
                                     <div class="tit" onclick="toggle_mapInfo(0)">본사</div>
                                     <div class="cont">
@@ -583,5 +578,15 @@
             </div>
         </footer>
     </div>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        AOS.init({
+           
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease-in-out',
+        });
+    </script>
+    
 </body>
 </html>

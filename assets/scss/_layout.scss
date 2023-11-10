@@ -28,15 +28,31 @@
     display: flex;
     align-items: center;
     padding: 0 60px;
-    transition: all .2s ease-in-out;
+    transition: 
+        color .2s ease-in-out,
+        background-color .2s ease-in-out,
+        top .4s ease-in-out
+    ;
+    &.up {
+        top: -80px;
+        
+    }
     @include tablet { 
         justify-content: space-between;
         padding: 0 36px;
         height: 60px;
+        &.up {
+            top: -60px;
+            
+        }
     }
     @include mobile {  
         height: 54px;
         padding: 0 24px;
+        &.up {
+            top: -54px;
+            
+        }
     }
     h1 {
         line-height: 80px;
@@ -75,9 +91,9 @@
             }
         }
         &_item {
-            font-size: 18px;
+            font-size: 14px;
             line-height: 1.5;
-            font-weight: 500;
+            font-weight: 400;
             position: relative;
             @include tablet {
                 padding-right: 18px;
@@ -140,7 +156,7 @@
         }
         .lang {
             &_ico {
-                background-image: url(../img/ico_globe_black.svg);
+                background-image: url(../img/globe_black.svg);
             }
             &_btn {
                 &:after {
@@ -164,9 +180,9 @@
 
         &_ico {
             margin-right: 6px;
-            width: 20px;
-            height: 20px;
-            background-image: url(../img/ico_globe.svg);
+            width: 18px;
+            height: 18px;
+            background-image: url(../img/globe.svg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -177,16 +193,17 @@
             display: flex;
             align-items: center;
             font-size: 14px;
-            &:after {
-                content:'';
-                border-left: 4px solid transparent;
-                border-right: 4px solid transparent;
-                border-top: 6px solid #fff;
-                margin-top: 1px;
-                margin-left: 5px;
-                transition: all .2s ease-in-out;
-            }
+            // &:after {
+            //     content:'';
+            //     border-left: 4px solid transparent;
+            //     border-right: 4px solid transparent;
+            //     border-top: 6px solid #fff;
+            //     margin-top: 1px;
+            //     margin-left: 5px;
+            //     transition: all .2s ease-in-out;
+            // }
         }
+        /*
         &:hover {
             .lang_btn::after {
                 transform: rotate(180deg);
@@ -235,6 +252,7 @@
                 }
             }
         }
+        */
     }
 }
 
@@ -328,7 +346,12 @@
     }
     &_item {
         
-        height: calc(var(--vh, 1vh) * 100);
+        height: 100vh;
+        @media only screen and (hover: none) and (pointer: coarse){
+            height: calc(var(--vh, 1vh) * 100);
+            
+            
+        }
         position: relative;
         display: flex;
         align-items: center;
@@ -782,13 +805,13 @@
         line-height: 1.2;
         font-weight: bold;
         -webkit-text-stroke: #BABABA;
-        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-width: 1px;
         -webkit-text-fill-color: transparent;
         
         span {
             -webkit-text-fill-color: #BABABA;
         }
-        padding-right: 0.6em;
+        //padding-right: 0.6em;
         @include tablet {
             font-size: 48px;
             -webkit-text-stroke-width: 1px;
@@ -799,11 +822,11 @@
         
     }
     &.dir_left {
-        transform: translateX(-100%);
+        transform: translateX(-55%);
     }
     &.dir_right {
         justify-content: flex-end;
-        transform: translateX(100%);
+        transform: translateX(55%);
     }
 }
 
@@ -1176,7 +1199,7 @@
             background-color: #fff;
             right: 24px;
             bottom: 24px;
-            box-shadow: 0 0 6px rgba(#000, .2);
+            //box-shadow: 0 0 6px rgba(#000, .2);
             &::before {
                 content:'';
                 position: absolute;
@@ -1265,7 +1288,7 @@
             top: 32px;
             background-color: #fff;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(#000, .3);
+            //box-shadow: 0 0 10px rgba(#000, .3);
             display: flex;
             align-items: center;
             justify-content: center;
