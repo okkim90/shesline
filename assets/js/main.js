@@ -114,19 +114,29 @@ let currentScroll = 0;
 let isScrollingDown = true;
 let scrollTimer;
 window.addEventListener("scroll", function(){
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(()=>{
-        if ( window.pageYOffset > currentScroll ) {
-            isScrollingDown = true;
-            //console.log('down');
-            header.classList.add('up');
-        } else {
-            isScrollingDown = false;
-            //console.log('down');
-            header.classList.remove('up');
-        }
-        currentScroll = window.pageYOffset
-    },100);
+    if ( window.pageYOffset > currentScroll && currentScroll > 100 ) {
+        isScrollingDown = true;
+        //console.log('down');
+        header.classList.add('up');
+    } else {
+        isScrollingDown = false;
+        //console.log('down');
+        header.classList.remove('up');
+    }
+    currentScroll = window.pageYOffset
+    // clearTimeout(scrollTimer);
+    // scrollTimer = setTimeout(()=>{
+    //     if ( window.pageYOffset > currentScroll ) {
+    //         isScrollingDown = true;
+    //         //console.log('down');
+    //         header.classList.add('up');
+    //     } else {
+    //         isScrollingDown = false;
+    //         //console.log('down');
+    //         header.classList.remove('up');
+    //     }
+    //     currentScroll = window.pageYOffset
+    // },100);
     
     /* 
     gsap.to(marquee_left, {
@@ -143,8 +153,8 @@ window.addEventListener("scroll", function(){
 
 
 let fill_txt_box = document.querySelector('.fill_txt_box');
-let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력,/ 적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다./ IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여/높은 수준의 제품과 품질 제공을 약속합니다.`
-let fil_arr = fill_txt.split("");
+let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력, / 적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다. / IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여 / 높은 수준의 제품과 품질 제공을 약속합니다.`
+let fil_arr = fill_txt.split(" ");
 
 fil_arr.forEach((e)=>{
     newBox = document.createElement('span');
@@ -185,7 +195,7 @@ function fill_ani(){
             fill_txt_item[count].classList.add('on')
             count +=1;
         }
-    },40);
+    },100);
 }
 
 
@@ -669,6 +679,10 @@ const prod_list = new Swiper('.prod_list',{
         dragSize: 260,
         draggable: true,
     },
+    navigation: {
+        nextEl: '.prod_next',
+        prevEl: '.prod_prev',
+    },
     breakpoints: {
         767: {
           slidesPerView: 1,  
@@ -758,22 +772,32 @@ const setPartnerBtn = (()=>{
 
 
 let pcount = ()=>{
+    // if (window.innerWidth < 768) {
+    //     return 10;
+    // }else if(window.innerWidth >= 768 && window.innerWidth < 1025){
+    //     return 15;
+    // }else if(window.innerWidth >= 1025) {
+    //     return 20;
+    // }
     if (window.innerWidth < 768) {
-        return 10;
-    }else if(window.innerWidth >= 768 && window.innerWidth < 1025){
-        return 15;
-    }else if(window.innerWidth >= 1025) {
-        return 20;
+        return 8;
+    }else{
+        return 16;
     }
 }
 let add_count = ()=>{
 
+    // if (window.innerWidth < 768) {
+    //     return 2;
+    // }else if(window.innerWidth >= 768 && window.innerWidth < 1025){
+    //     return 3;
+    // }else {
+    //     return 4;
+    // }
     if (window.innerWidth < 768) {
-        return 2;
-    }else if(window.innerWidth >= 768 && window.innerWidth < 1025){
-        return 3;
-    }else {
         return 4;
+    }else{
+        return 8;
     }
 };
 let prev_pcount = pcount();
@@ -916,11 +940,11 @@ map_load(0);
         
     });
     const marker = new naver.maps.Marker({
-        icon: {
-          url: "../assets/img/marker.webp",
-          scaledSize: new naver.maps.Size(30, 30),
-          origin: new naver.maps.Point(0, 0),
-        },
+        // icon: {
+        //   url: "../assets/img/marker.webp",
+        //   scaledSize: new naver.maps.Size(30, 30),
+        //   origin: new naver.maps.Point(0, 0),
+        // },
         position: elluce,
         map: map
     });
@@ -932,7 +956,7 @@ map_load(0);
     ].join('');
    
     const infowindow = new naver.maps.InfoWindow({
-        content: contentString,
+        //content: contentString,
         //maxWidth: 300,
        
         backgroundColor: "transparent",

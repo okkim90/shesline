@@ -89,6 +89,9 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            @include mobile { 
+                gap: 10px;
+            }
         }
         &_item {
             font-size: 14px;
@@ -114,11 +117,22 @@
                     height: 8px;
                     border-radius: 50%;
                     background-color: $c_fc;
-
+                    
                 }
             }
+            // @include tablet {
+            //     padding-right: 14px;
+            // }
             @include tablet {
-                padding-right: 14px;
+                padding-right: 0;
+                a {
+                    width: 14px;
+                    height: 14px;
+                    position: relative;
+                    span {
+                        display: none;
+                    }
+                }
             }
 
             &::after {
@@ -143,7 +157,11 @@
                 }
                 @include tablet { 
                     opacity: 1;
+                    &::before {
+                        transform: scale(1.4);
+                    }
                 }
+                
             }
         }
         
@@ -740,6 +758,7 @@
         position: relative;
         font-weight: 600;
         color: #ddd;
+        margin-right: 0.4em;
         // background-repeat: no-repeat;
         // transition: background-size .5s cubic-bezier(0.67,0.01,0.15,0.98);
         // -webkit-text-fill-color: #ddd;
@@ -757,7 +776,7 @@
             color: #222;
             width: 0;
             white-space: nowrap;
-            transition: width 0.02s linear;
+            transition: width 0.1s linear;
         }
         &.on {
            &::after {
@@ -1441,6 +1460,14 @@
 .prod {
     &_list {
         position: relative;
+        &:hover {
+            .prod_ctrl_btn {
+                opacity: 1;
+                &.swiper-button-disabled {
+                    opacity: 0;
+                }
+            }
+        }
         .prod-scrollbar {
             margin-top: 70px;
             height: 4px;
@@ -1488,6 +1515,73 @@
             }
         }
     }
+    &_ctrl {
+        //opacity: 0;
+       
+        &_btn {
+            //opacity: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #E7E7E7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            z-index: 11;
+
+            transition: all .2s ease-in-out;
+            margin-top: -74px;
+
+            @include tablet {
+                margin-top: -54px;
+                width: 44px;
+                height: 44px;
+            }
+            @include tablet {
+               
+                width: 38px;
+                height: 38px;
+            }
+            &.swiper-button-disabled {
+                cursor: not-allowed;
+                opacity: 0;
+            }
+            &::after {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background-image: url(../img/arrow_r.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                margin-left: 4px;
+            }
+            &.prod_next {
+                right: -30px;
+                @include tablet {
+                    right: calc(4% - 10px);
+                }
+                @include mobile {
+                    right: -10px;
+                }
+               
+            }
+            &.prod_prev {
+                left: -30px;
+                @include mobile {
+                    left: -10px;
+                }
+               
+                &::after {
+                    
+                    margin-left: 0;
+                    margin-right: 4px;
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
 }
 
 .partner {
@@ -1504,7 +1598,7 @@
 
         @include tablet {
             margin-top: 36px;
-            @include flex_gap(3 ,16px, 40px);
+            @include flex_gap(4 ,16px, 40px);
 
         }
         @include mobile {
@@ -1642,7 +1736,7 @@
 }
 
 .map {
-    background-color: #f5f5f5;
+    background-color: #f7f7f7;
    
 
     &_tit {
