@@ -4801,8 +4801,12 @@ input::-webkit-search-results-decoration {
   border-color: #A55C31;
   color: #A55C31;
 }
-.mv_txt.ty_brown .mv_txt_btn:hover {
-  background-color: rgba(165, 92, 49, 0.06);
+@media not (hover: none) {
+  .mv_txt.ty_brown .mv_txt_btn:hover {
+    background-color: #fff;
+    color: #A55C31;
+    border-color: #fff;
+  }
 }
 .mv_txt.ty_brown .mv_txt_btn::after {
   background-image: url(../img/arrow-right_brown.svg);
@@ -4873,9 +4877,14 @@ input::-webkit-search-results-decoration {
   background-position: center center;
   margin-left: 10px;
 }
-.mv_txt_btn:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+@media not (hover: none) {
+  .mv_txt_btn:hover {
+    background-color: #fff;
+    color: #353535;
+  }
+  .mv_txt_btn:hover::after {
+    background-image: url(../img/arrow-right_black.svg);
+  }
 }
 @media (max-width: 1024px) {
   .mv_txt_btn {

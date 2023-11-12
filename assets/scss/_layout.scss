@@ -410,9 +410,18 @@
             .mv_txt_btn {
                 border-color: #A55C31;
                 color: #A55C31;
-                &:hover {
-                    background-color: rgba(#A55C31, .06);
+                @media not (hover: none){
+                    &:hover {
+                        background-color: #fff;
+                        color: #A55C31;
+                        border-color: #fff;
+                        // &::after {
+                        //     background-image: url(../img/arrow-right_black.svg);
+                        // }
+                    }
                 }
+
+                
                 &::after {
                     background-image: url(../img/arrow-right_brown.svg);
                 }
@@ -473,10 +482,16 @@
                 background-position: center center;
                 margin-left: 10px;
             }
-            &:hover {
-                background-color: rgba(#fff, .06);
-                box-shadow: 0 0 6px rgba(#000, .1);
+            @media not (hover: none){
+                &:hover {
+                    background-color: #fff;
+                    color: $c_fc;
+                    &::after {
+                        background-image: url(../img/arrow-right_black.svg);
+                    }
+                }
             }
+            
             @include tablet {   
                 margin-top: 42px;
                 height: 44px;
