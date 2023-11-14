@@ -118,11 +118,34 @@ window.addEventListener("scroll", function(){
         isScrollingDown = true;
         //console.log('down');
         header.classList.add('up');
+        
     } else {
         isScrollingDown = false;
         //console.log('down');
         header.classList.remove('up');
+       
     }
+
+    
+        if ( isScrollingDown  ) {
+            if(window.pageYOffset + document.documentElement.clientHeight  > document.querySelector('#footer').offsetTop + 100){
+                btn_top.classList.add('up')
+            }else{
+                btn_top.classList.remove('up')
+            }
+            
+            
+            
+        }else{
+            if(window.pageYOffset > 200){
+                btn_top.classList.add('up')
+            }else{
+                btn_top.classList.remove('up')
+            }
+        }
+
+
+
     currentScroll = window.pageYOffset
     // clearTimeout(scrollTimer);
     // scrollTimer = setTimeout(()=>{
@@ -350,7 +373,8 @@ window.addEventListener('DOMContentLoaded', toggleActiveOnViewport);
 
 
 /* go to top */
-document.querySelector('.btn_top').addEventListener('click',()=>{
+const btn_top = document.querySelector('.btn_top');
+btn_top.addEventListener('click',()=>{
     let body = document.getElementsByTagName('body')[0];
    
     gsap.to(window,{

@@ -335,16 +335,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        @include tablet {  
+        &:hover {
+            background-color: #f7f7f7;
+        }
+        @include tablet {
+            z-index: 9999;
+            transition: all .2s ease-in-out;
+            position: fixed;  
             width: 44px;
             height: 44px;
+            top: auto;
+            bottom: -50px;
+            &.up {
+                bottom: 30px;
+            }
+            
+            right: 30px;
         }
         @include mobile {  
             width: 38px;
             height: 38px;
             top: auto;
             right: 24px;
-            bottom: 0;
+            bottom: -40px;
+            &.up {
+                bottom: 24px;
+            }
         }
        
         &::after {
@@ -356,7 +372,11 @@
             border-top: 2px solid #000;
             border-right: 2px solid #000;
         }
+        
     }
+
+
+
 }
 .mv {
     &_wrap {
@@ -412,12 +432,12 @@
                 color: #A55C31;
                 @media not (hover: none){
                     &:hover {
-                        background-color: #fff;
-                        color: #A55C31;
-                        border-color: #fff;
-                        // &::after {
-                        //     background-image: url(../img/arrow-right_black.svg);
-                        // }
+                        background-color: #A55C31;
+                        color: #fff;
+                        border-color: #A55C31;
+                        &::after {
+                            background-image: url(../img/arrow-right.svg);
+                        }
                     }
                 }
 
@@ -471,7 +491,7 @@
             color: #fff;
             font-size: 16px;
             margin-top: 60px;
-            transition: background-color .2s ease-in-out;
+            transition: all .1s ease-in-out;
             &::after {
                 content: '';
                 width: 15px;
@@ -871,9 +891,15 @@
     padding: 0 30px;
     border-radius: 24px;
 
-    @include btn_sort(#F7F7F7, $c_fc, #6E6E6E, #fff);
-    
-
+    @include btn_sort(#F7F7F7, #353535, #6e6e6e, #fff);
+    &:hover {
+        background-color: #e7e7e7;
+    }
+    &.on {
+        &:hover {
+            background-color: #6e6e6e;
+        }
+    }
     @include tablet { 
         height: 40px;
         padding: 0 24px;
@@ -1050,8 +1076,12 @@
             z-index: 11;
 
             transition: all .2s ease-in-out;
+            &:hover {
+                background-color: #bababa;
+            }
 
             @include tablet {
+                display: none;
                 width: 44px;
                 height: 44px;
                 top: 24px;
@@ -1534,7 +1564,7 @@
         //opacity: 0;
        
         &_btn {
-            //opacity: 0;
+            opacity: 0;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -1548,13 +1578,16 @@
 
             transition: all .2s ease-in-out;
             margin-top: -74px;
-
+            &:hover {
+                background-color: #bababa;
+            }
             @include tablet {
+                display: none;
                 margin-top: -54px;
                 width: 44px;
                 height: 44px;
             }
-            @include tablet {
+            @include mobile {
                
                 width: 38px;
                 height: 38px;
@@ -1642,9 +1675,18 @@
             align-items: center;
             font-size: 16px;
             border-radius: 25px;
+            color: $c_fc;
             border: 1px solid $c_fc;
             box-sizing: content-box;
-
+            &:hover {
+                background-color: $c_fc;
+                color: #fff;
+                i {
+                    &::before, &::after {
+                        background-color: #fff;
+                    }
+                }
+            }
             @include tablet {
                 height: 38px;
                 border-radius: 19px;
